@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { SiteFooter } from "./components/site-footer";
+import { MobileNav } from "./components/mobile-nav";
 
 const navLinks = [
   { href: "/treatments", label: "Treatments" },
@@ -16,17 +17,19 @@ export default function SiteLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="sticky top-0 z-50 bg-surface border-b border-border">
+      <header className="sticky top-0 z-40 bg-surface border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             <Link
               href="/"
-              className="text-lg font-bold text-foreground hover:text-interactive transition-colors"
+              className="font-bold text-foreground hover:text-interactive transition-colors leading-tight"
             >
-              DS Preclinical Therapeutics Explorer
+              <span className="text-[11px] sm:text-base lg:text-lg">
+                DS Preclinical Therapeutics Explorer
+              </span>
             </Link>
             <div className="flex items-center gap-1 sm:gap-2">
-              <ul className="flex items-center gap-1 sm:gap-2">
+              <ul className="hidden sm:flex items-center gap-1 sm:gap-2">
                 <li>
                   <a
                     href="/"
@@ -46,7 +49,10 @@ export default function SiteLayout({
                   </li>
                 ))}
               </ul>
-              <ThemeToggle />
+              <div className="hidden sm:block">
+                <ThemeToggle />
+              </div>
+              <MobileNav />
             </div>
           </div>
         </nav>

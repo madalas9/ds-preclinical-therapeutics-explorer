@@ -37,8 +37,10 @@ const OUTCOME_LABELS: Record<EffectRating, string> = {
   "Partial Rescue": "Partial",
   "Differential Rescue (Dose-dependent)": "Differential",
   "No effect": "No effect",
-  NA: "N/A",
+  NA: "NT",
 };
+
+const NT_TOOLTIP = "Not Tested — this outcome axis was not measured.";
 
 // === Compact outcome bar ===
 
@@ -78,7 +80,9 @@ function CompactOutcomeBar({
               key={outcome}
               className={`h-full ${OUTCOME_COLORS[outcome]} relative flex items-center justify-center`}
               style={{ width: `${pct}%`, minWidth: pct > 0 ? 4 : 0 }}
-              title={`${OUTCOME_LABELS[outcome]}: ${counts[outcome]} (${Math.round(pct)}%)`}
+              title={outcome === "NA"
+                ? `${NT_TOOLTIP}\n${counts[outcome]} conditions (${Math.round(pct)}%)`
+                : `${OUTCOME_LABELS[outcome]}: ${counts[outcome]} (${Math.round(pct)}%)`}
             >
               {pct >= 18 && (
                 <span className="text-[9px] font-medium text-white drop-shadow-sm">
@@ -91,7 +95,11 @@ function CompactOutcomeBar({
       </div>
       <div className="flex flex-wrap gap-x-2 gap-y-0.5">
         {segments.map((outcome) => (
-          <span key={outcome} className="text-[10px] text-muted-foreground">
+          <span
+            key={outcome}
+            className="text-[10px] text-muted-foreground"
+            title={outcome === "NA" ? NT_TOOLTIP : undefined}
+          >
             <span
               className={`inline-block h-2 w-2 rounded-sm ${OUTCOME_COLORS[outcome]} mr-0.5 align-middle`}
             />
@@ -149,7 +157,7 @@ function TreatmentPicker({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex h-9 w-full items-center gap-1.5 rounded-md border-2 border-dashed border-border bg-surface px-3 text-sm text-muted-foreground hover:border-interactive hover:text-foreground cursor-pointer transition-colors"
+        className="flex min-h-[44px] w-full items-center gap-1.5 rounded-md border-2 border-dashed border-border bg-surface px-3 text-sm text-muted-foreground hover:border-interactive hover:text-foreground cursor-pointer transition-colors touch-manipulation"
       >
         <span className="text-lg leading-none">+</span>
         <span>Add treatment</span>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 import type { CorpusStructureRow } from "@/src/lib/queries";
 
@@ -56,8 +56,8 @@ interface SunburstNode {
   name: string;
   value?: number;
   pctOfCorpus?: number;
-  treatmentId?: string;  // DST## identifier for tooltip
-  canonicalName?: string;  // Full canonical name for tooltip (treatment or model)
+  treatmentId?: string;
+  canonicalName?: string;
   itemStyle?: { color: string };
   children?: SunburstNode[];
 }
@@ -74,7 +74,6 @@ function buildSunburstData(
 ): { nodes: SunburstNode[]; totalValue: number } {
   const totalValue = data.reduce((sum, row) => sum + row.count, 0);
 
-  // Map structure: species -> { modelShort, modelCanonical } -> class -> { treatmentId -> compound data }
   const speciesMap = new Map<
     string,
     Map<string, { canonical: string; classes: Map<string, Map<string, { count: number; shortName: string; canonical: string }>> }>
@@ -86,7 +85,6 @@ function buildSunburstData(
     }
     const modelMap = speciesMap.get(row.species)!;
 
-    // Key by short model name, store canonical for tooltip
     if (!modelMap.has(row.model)) {
       modelMap.set(row.model, { canonical: row.model_name_canonical, classes: new Map() });
     }
@@ -150,7 +148,6 @@ function buildSunburstData(
           });
         }
 
-        // Compute pctOfCorpus for the class node
         const classTotal = (classNode.children || []).reduce(
           (sum, child) => sum + (child.value || 0), 0
         );
@@ -159,10 +156,8 @@ function buildSunburstData(
         modelNode.children!.push(classNode);
       }
 
-      // Compute pctOfCorpus for the model node
       const modelTotal = (modelNode.children || []).reduce(
         (sum, child) => {
-          // Sum values from grandchildren (compounds) since class nodes don't have value
           const classChildren = child.children || [];
           return sum + classChildren.reduce((s, c) => s + (c.value || 0), 0);
         }, 0
@@ -178,10 +173,82 @@ function buildSunburstData(
   return { nodes: result, totalValue };
 }
 
+type ViewportTier = "mobile" | "tablet" | "desktop";
+
+function useViewportTier(): ViewportTier {
+  const [tier, setTier] = useState<ViewportTier>("desktop");
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      if (w < 640) setTier("mobile");
+      else if (w < 1024) setTier("tablet");
+      else setTier("desktop");
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return tier;
+}
+
+const THRESHOLDS = {
+  mobile: {
+    species_minAngle: 20,
+    species_fontSize: 4,
+    model_minPct: 15,
+    model_minAngle: 15,
+    model_fontSize: 4,
+    class_minPct: 12,
+    class_minAngle: 12,
+    class_fontSize: 4,
+    compound_minPct: 15,
+    compound_minAngle: 15,
+    compound_fontSize: 4,
+    compound_maxNameLen: 8,
+  },
+  tablet: {
+    species_minAngle: 6,
+    species_fontSize: 14,
+    model_minPct: 3,
+    model_minAngle: 8,
+    model_fontSize: 11,
+    class_minPct: 2.5,
+    class_minAngle: 6,
+    class_fontSize: 10,
+    compound_minPct: 4,
+    compound_minAngle: 6,
+    compound_fontSize: 10,
+    compound_maxNameLen: 18,
+  },
+  desktop: {
+    species_minAngle: 4,
+    species_fontSize: 16,
+    model_minPct: 1.5,
+    model_minAngle: 5,
+    model_fontSize: 12,
+    class_minPct: 1.2,
+    class_minAngle: 4,
+    class_fontSize: 11,
+    compound_minPct: 2.5,
+    compound_minAngle: 3,
+    compound_fontSize: 11,
+    compound_maxNameLen: 24,
+  },
+};
+
+const CHART_SIZES = {
+  mobile: { height: 500, cardMinH: 600, centerFontSize: 36, subFontSize: 12 },
+  tablet: { height: 700, cardMinH: 800, centerFontSize: 46, subFontSize: 14 },
+  desktop: { height: 900, cardMinH: 1080, centerFontSize: 56, subFontSize: 16 },
+};
+
 export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<HTMLDivElement>(null);
   const chartInstance = useRef<echarts.ECharts | null>(null);
+  const viewportTier = useViewportTier();
 
   const modelColorMap = new Map<string, number>();
   const uniqueModels = [...new Set(data.map((d) => d.model))].sort();
@@ -189,7 +256,6 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
     modelColorMap.set(model, index);
   });
 
-  // Dispose chart on unmount to prevent memory leaks
   useEffect(() => {
     return () => {
       chartInstance.current?.dispose();
@@ -197,7 +263,6 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
     };
   }, []);
 
-  // ResizeObserver effect: re-layout when container size changes
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -217,16 +282,16 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
     };
   }, []);
 
-  // Main chart rendering effect
   useEffect(() => {
     if (!chartRef.current) return;
 
+    const t = THRESHOLDS[viewportTier];
+    const sizes = CHART_SIZES[viewportTier];
     const isDark = document.documentElement.classList.contains("dark");
     const textColor = isDark ? "#F1F5F9" : "#0F172A";
     const textSecondary = isDark ? "#94A3B8" : "#475569";
     const bgColor = isDark ? "#0B1220" : "#F8FAFC";
 
-    // Dispose old instance to prevent stale state on re-mount
     if (chartInstance.current) {
       chartInstance.current.dispose();
     }
@@ -251,10 +316,11 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
         itemStyle: { borderWidth: 2, borderColor: bgColor },
         label: {
           rotate: "radial" as const,
-          fontSize: 16,
+          fontSize: t.species_fontSize,
           fontFamily: "Atkinson Hyperlegible, sans-serif",
           fontWeight: 600,
           color: textColor,
+          minAngle: t.species_minAngle,
         },
       },
       {
@@ -263,11 +329,11 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
         itemStyle: { borderWidth: 1.5, borderColor: bgColor },
         label: {
           rotate: "radial" as const,
-          fontSize: 12,
+          fontSize: t.model_fontSize,
           fontFamily: "Atkinson Hyperlegible, sans-serif",
           color: textColor,
-          minAngle: 5,
-          formatter: makeLabelFormatter(2.0),
+          minAngle: t.model_minAngle,
+          formatter: makeLabelFormatter(t.model_minPct),
         },
         labelLayout: { hideOverlap: true },
       },
@@ -277,11 +343,11 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
         itemStyle: { borderWidth: 1, borderColor: bgColor },
         label: {
           rotate: "radial" as const,
-          fontSize: 11,
+          fontSize: t.class_fontSize,
           fontFamily: "Atkinson Hyperlegible, sans-serif",
           color: textColor,
-          minAngle: 4,
-          formatter: makeLabelFormatter(1.5),
+          minAngle: t.class_minAngle,
+          formatter: makeLabelFormatter(t.class_minPct),
         },
         labelLayout: { hideOverlap: true },
       },
@@ -291,15 +357,15 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
         itemStyle: { borderWidth: 1, borderColor: bgColor },
         label: {
           rotate: "radial" as const,
-          fontSize: 11,
+          fontSize: t.compound_fontSize,
           fontFamily: "Atkinson Hyperlegible, sans-serif",
           color: textColor,
-          minAngle: 3,
+          minAngle: t.compound_minAngle,
           formatter: (params: unknown) => {
             const p = params as { name: string; data?: { pctOfCorpus?: number } };
             const pct = p.data?.pctOfCorpus ?? 0;
-            if (pct < 2.5) return "";
-            return truncateName(p.name, 24);
+            if (pct < t.compound_minPct) return "";
+            return truncateName(p.name, t.compound_maxNameLen);
           },
         },
         labelLayout: { hideOverlap: true },
@@ -332,15 +398,12 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           const path = ancestors.slice(1).map((a) => a.name).join(" → ");
           const idSuffix = p.data?.treatmentId ? ` [${p.data.treatmentId}]` : "";
 
-          // Build extra lines for full names when they differ from short names
           const extraLines: string[] = [];
 
-          // Check compound (leaf node) canonical name
           if (p.data?.canonicalName) {
             extraLines.push(`Full name: ${p.data.canonicalName}`);
           }
 
-          // Check model (level 2, index 2 in treePathInfo) canonical name
           const modelNode = ancestors[2];
           if (modelNode?.data?.canonicalName) {
             extraLines.push(`Full model: ${modelNode.data.canonicalName}`);
@@ -373,7 +436,7 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           top: "center",
           style: {
             text: `${totalExperiments}`,
-            fontSize: 56,
+            fontSize: sizes.centerFontSize,
             fontWeight: "bold",
             fontFamily: "Atkinson Hyperlegible, sans-serif",
             fill: textColor,
@@ -386,7 +449,7 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           top: "53%",
           style: {
             text: "experiments",
-            fontSize: 16,
+            fontSize: sizes.subFontSize,
             fontFamily: "Atkinson Hyperlegible, sans-serif",
             fill: textSecondary,
             align: "center",
@@ -407,7 +470,6 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
       const newBgColor = nowDark ? "#0B1220" : "#F8FAFC";
       const { nodes: newData } = buildSunburstData(data, nowDark, modelColorMap);
 
-      // Rebuild levels with new theme colors so formatters use fresh textColor
       const newLevels = [
         {},
         {
@@ -416,10 +478,11 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           itemStyle: { borderWidth: 2, borderColor: newBgColor },
           label: {
             rotate: "radial" as const,
-            fontSize: 16,
+            fontSize: t.species_fontSize,
             fontFamily: "Atkinson Hyperlegible, sans-serif",
             fontWeight: 600,
             color: newTextColor,
+            minAngle: t.species_minAngle,
           },
         },
         {
@@ -428,11 +491,11 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           itemStyle: { borderWidth: 1.5, borderColor: newBgColor },
           label: {
             rotate: "radial" as const,
-            fontSize: 12,
+            fontSize: t.model_fontSize,
             fontFamily: "Atkinson Hyperlegible, sans-serif",
             color: newTextColor,
-            minAngle: 5,
-            formatter: makeLabelFormatter(2.0),
+            minAngle: t.model_minAngle,
+            formatter: makeLabelFormatter(t.model_minPct),
           },
           labelLayout: { hideOverlap: true },
         },
@@ -442,11 +505,11 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           itemStyle: { borderWidth: 1, borderColor: newBgColor },
           label: {
             rotate: "radial" as const,
-            fontSize: 11,
+            fontSize: t.class_fontSize,
             fontFamily: "Atkinson Hyperlegible, sans-serif",
             color: newTextColor,
-            minAngle: 4,
-            formatter: makeLabelFormatter(1.5),
+            minAngle: t.class_minAngle,
+            formatter: makeLabelFormatter(t.class_minPct),
           },
           labelLayout: { hideOverlap: true },
         },
@@ -456,15 +519,15 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
           itemStyle: { borderWidth: 1, borderColor: newBgColor },
           label: {
             rotate: "radial" as const,
-            fontSize: 11,
+            fontSize: t.compound_fontSize,
             fontFamily: "Atkinson Hyperlegible, sans-serif",
             color: newTextColor,
-            minAngle: 3,
+            minAngle: t.compound_minAngle,
             formatter: (params: unknown) => {
               const p = params as { name: string; data?: { pctOfCorpus?: number } };
               const pct = p.data?.pctOfCorpus ?? 0;
-              if (pct < 2.5) return "";
-              return truncateName(p.name, 24);
+              if (pct < t.compound_minPct) return "";
+              return truncateName(p.name, t.compound_maxNameLen);
             },
           },
           labelLayout: { hideOverlap: true },
@@ -493,18 +556,20 @@ export function CorpusSunburst({ data, totalExperiments }: CorpusSunburstProps) 
       window.removeEventListener("resize", handleResize);
       themeObserver.disconnect();
     };
-  }, [data, totalExperiments, modelColorMap]);
+  }, [data, totalExperiments, modelColorMap, viewportTier]);
+
+  const sizes = CHART_SIZES[viewportTier];
 
   return (
     <div
       ref={containerRef}
       className="relative w-full"
-      style={{ height: 900, minWidth: 280 }}
+      style={{ height: sizes.height, minWidth: 280 }}
     >
       <div
         ref={chartRef}
         className="absolute inset-0"
-        style={{ minHeight: 600 }}
+        style={{ minHeight: sizes.height * 0.66 }}
       />
     </div>
   );

@@ -68,6 +68,52 @@ export function countByBehaviorOutcome(): Record<EffectRating, number> {
 }
 
 /**
+ * Counts of rows grouped by cellular_or_molecular_effect_rating.
+ * Returns a Record with all 5 EffectRating values as keys.
+ */
+export function countByCellularOutcome(): Record<EffectRating, number> {
+  const result: Record<EffectRating, number> = {
+    Rescue: 0,
+    "Partial Rescue": 0,
+    "No effect": 0,
+    "Differential Rescue (Dose-dependent)": 0,
+    NA: 0,
+  };
+
+  for (const row of getAllRows()) {
+    const outcome = row.cellular_or_molecular_effect_rating;
+    if (outcome in result) {
+      result[outcome]++;
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Counts of rows grouped by molecular_effect_rating.
+ * Returns a Record with all 5 EffectRating values as keys.
+ */
+export function countByMolecularOutcome(): Record<EffectRating, number> {
+  const result: Record<EffectRating, number> = {
+    Rescue: 0,
+    "Partial Rescue": 0,
+    "No effect": 0,
+    "Differential Rescue (Dose-dependent)": 0,
+    NA: 0,
+  };
+
+  for (const row of getAllRows()) {
+    const outcome = row.molecular_effect_rating;
+    if (outcome in result) {
+      result[outcome]++;
+    }
+  }
+
+  return result;
+}
+
+/**
  * Top N treatments by study count (distinct DOIs).
  * Used for the "Top 10 most-studied compounds" chart.
  */

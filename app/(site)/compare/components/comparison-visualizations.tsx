@@ -51,8 +51,10 @@ const OUTCOME_LABELS: Record<EffectRating, string> = {
   "Partial Rescue": "Partial Rescue",
   "Differential Rescue (Dose-dependent)": "Differential",
   "No effect": "No effect",
-  NA: "N/A",
+  NA: "NT",
 };
+
+const NT_TOOLTIP = "Not Tested — this outcome axis was not measured in these studies.";
 
 const COMPOUND_COLORS = [
   "var(--cat-1)",  // orange
@@ -267,10 +269,13 @@ function OutcomeBarChart({
             borderRadius: 6,
             fontSize: 11,
           }}
-          formatter={(value: unknown, name: unknown) => [
-            `${value}%`,
-            OUTCOME_LABELS[name as EffectRating] || String(name),
-          ]}
+          formatter={(value: unknown, name: unknown) => {
+            const label = OUTCOME_LABELS[name as EffectRating] || String(name);
+            if (name === "NA") {
+              return [`${value}%`, `${label} (Not Tested)`];
+            }
+            return [`${value}%`, label];
+          }}
           labelFormatter={(label, payload) => {
             if (payload && payload.length > 0) {
               const item = payload[0].payload;

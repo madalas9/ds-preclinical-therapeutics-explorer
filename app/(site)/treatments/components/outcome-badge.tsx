@@ -31,9 +31,11 @@ const OUTCOME_STYLES: Record<
   NA: {
     bg: "bg-slate-100 dark:bg-slate-800",
     text: "text-slate-400 dark:text-slate-500",
-    label: "NA",
+    label: "NT",
   },
 };
+
+const NT_TOOLTIP = "Not Tested — this outcome axis was not measured in these studies.";
 
 export function OutcomeBadge({ outcome }: OutcomeBadgeProps) {
   const style = OUTCOME_STYLES[outcome];
@@ -41,6 +43,7 @@ export function OutcomeBadge({ outcome }: OutcomeBadgeProps) {
   return (
     <span
       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${style.bg} ${style.text}`}
+      title={outcome === "NA" ? NT_TOOLTIP : undefined}
     >
       {style.label}
     </span>

@@ -24,7 +24,8 @@ export function SiteFooter() {
                   alt="University of Dayton"
                   width={160}
                   height={48}
-                  className="h-12 w-auto object-contain"
+                  className="object-contain"
+                  style={{ height: "48px", width: "auto" }}
                 />
               </Link>
               <Link
@@ -39,7 +40,8 @@ export function SiteFooter() {
                   alt="Trisomy 21 Research Society"
                   width={48}
                   height={48}
-                  className="h-12 w-12 object-contain"
+                  className="object-contain"
+                  style={{ height: "48px", width: "48px" }}
                 />
               </Link>
             </div>

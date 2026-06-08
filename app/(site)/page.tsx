@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import {
   corpusStats,
   countByBehaviorOutcome,
+  countByCellularOutcome,
+  countByMolecularOutcome,
   topNTreatmentsByStudyCount,
   countBySpecies,
   getCorpusStructureHierarchy,
@@ -16,9 +18,19 @@ import { SupportersBlock } from "./components/supporters-block";
 export default function HomePage() {
   const stats = corpusStats();
   const structureData = getCorpusStructureHierarchy();
-  const outcomeData = countByBehaviorOutcome();
+  const behaviorOutcomeData = countByBehaviorOutcome();
+  const cellularOutcomeData = countByCellularOutcome();
+  const molecularOutcomeData = countByMolecularOutcome();
   const topTreatments = topNTreatmentsByStudyCount(10);
   const speciesData = countBySpecies();
+
+  const behaviorTested = stats.total_experiments - behaviorOutcomeData.NA;
+  const cellularTested = stats.total_experiments - cellularOutcomeData.NA;
+  const molecularTested = stats.total_experiments - molecularOutcomeData.NA;
+
+  const behaviorPct = Math.round((behaviorTested / stats.total_experiments) * 100);
+  const cellularPct = Math.round((cellularTested / stats.total_experiments) * 100);
+  const molecularPct = Math.round((molecularTested / stats.total_experiments) * 100);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 sm:py-16 lg:py-20">
@@ -84,8 +96,8 @@ export default function HomePage() {
 
       {/* CHARTS GRID — 2 columns on desktop */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
-        {/* LEFT COLUMN — Species Coverage (tall card) */}
-        <div className="clay-card lg:h-[684px] flex flex-col">
+        {/* LEFT COLUMN — Species Coverage */}
+        <div className="clay-card lg:min-h-[640px] flex flex-col">
           <div className="flex items-start justify-between mb-4">
             <div>
               <h2 className="text-lg font-bold text-foreground">
@@ -111,59 +123,91 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — Two stacked cards */}
-        <div className="grid grid-rows-[auto_auto] lg:grid-rows-[2fr_1fr] gap-6">
-          {/* TOP-RIGHT — Most-studied compounds (taller) */}
-          <div className="clay-card lg:h-[440px] flex flex-col">
-            <div className="flex items-start justify-between mb-2">
-              <div>
-                <h2 className="text-lg font-bold text-foreground">
-                  Most-studied compounds
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Top 10 by distinct publication count
-                </p>
-              </div>
-              <Link
-                href="/treatments"
-                className="text-sm text-interactive hover:text-interactive-hover flex items-center gap-1 shrink-0"
-              >
-                Explore <ArrowRight className="h-3 w-3" />
-              </Link>
+        {/* RIGHT COLUMN — Most-studied compounds (full height) */}
+        <div className="clay-card lg:min-h-[640px] flex flex-col">
+          <div className="flex items-start justify-between mb-2">
+            <div>
+              <h2 className="text-lg font-bold text-foreground">
+                Most-studied compounds
+              </h2>
+              <p className="text-sm text-muted-foreground mt-1">
+                Top 10 by distinct publication count
+              </p>
             </div>
-            <div className="flex-1 min-h-0">
-              <TopTreatmentsChart data={topTreatments} tall />
-            </div>
+            <Link
+              href="/treatments"
+              className="text-sm text-interactive hover:text-interactive-hover flex items-center gap-1 shrink-0"
+            >
+              Explore <ArrowRight className="h-3 w-3" />
+            </Link>
           </div>
+          <div className="flex-1 min-h-0">
+            <TopTreatmentsChart data={topTreatments} tall />
+          </div>
+        </div>
+      </section>
 
-          {/* BOTTOM-RIGHT — Outcome Distribution (shorter) */}
-          <div className="clay-card lg:h-[220px] flex flex-col">
-            <div className="flex items-start justify-between mb-3">
-              <div>
-                <h2 className="text-lg font-bold text-foreground">
-                  Outcomes across {stats.total_experiments} experiments
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Distribution of behavioral effect ratings
-                </p>
+      {/* OUTCOME DISTRIBUTION BY MEASUREMENT AXIS */}
+      <section className="mb-16">
+        <div className="mb-6">
+          <h2 className="text-xl font-bold text-foreground">
+            Outcome distribution by measurement axis
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            How experimental conditions distribute across Rescue / Partial / Differential / No effect / Not Tested for each measurement type
+          </p>
+        </div>
+
+        {/* THREE OUTCOME DISTRIBUTION CHARTS WITH INTEGRATED STATS */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="clay-card">
+            <div className="text-center mb-3">
+              <div className="text-[28px] sm:text-4xl font-bold text-foreground">{behaviorTested}</div>
+              <div className="text-xs text-muted-foreground">
+                conditions tested behavior ({behaviorPct}%)
               </div>
-              <Link
-                href="/experiments"
-                className="text-sm text-interactive hover:text-interactive-hover flex items-center gap-1 shrink-0"
-              >
-                Explore <ArrowRight className="h-3 w-3" />
-              </Link>
             </div>
-            <div className="flex-1 flex items-center">
-              <OutcomeDistributionChart data={outcomeData} />
+            <div className="border-t border-border my-3" />
+            <div className="mb-3">
+              <h3 className="text-base font-semibold text-foreground">Behavioral outcomes</h3>
+              <p className="text-xs text-muted-foreground">Behavior tasks (MWM, NOR, Y-maze, etc.)</p>
             </div>
+            <OutcomeDistributionChart data={behaviorOutcomeData} />
+          </div>
+          <div className="clay-card">
+            <div className="text-center mb-3">
+              <div className="text-[28px] sm:text-4xl font-bold text-foreground">{cellularTested}</div>
+              <div className="text-xs text-muted-foreground">
+                tested cellular function ({cellularPct}%)
+              </div>
+            </div>
+            <div className="border-t border-border my-3" />
+            <div className="mb-3">
+              <h3 className="text-base font-semibold text-foreground">Cellular outcomes</h3>
+              <p className="text-xs text-muted-foreground">Cellular / morphological effects</p>
+            </div>
+            <OutcomeDistributionChart data={cellularOutcomeData} />
+          </div>
+          <div className="clay-card">
+            <div className="text-center mb-3">
+              <div className="text-[28px] sm:text-4xl font-bold text-foreground">{molecularTested}</div>
+              <div className="text-xs text-muted-foreground">
+                tested molecular target ({molecularPct}%)
+              </div>
+            </div>
+            <div className="border-t border-border my-3" />
+            <div className="mb-3">
+              <h3 className="text-base font-semibold text-foreground">Molecular outcomes</h3>
+              <p className="text-xs text-muted-foreground">Gene/protein/transcript effects</p>
+            </div>
+            <OutcomeDistributionChart data={molecularOutcomeData} />
           </div>
         </div>
       </section>
 
       {/* SUNBURST CHART — Full-width */}
       <section>
-        <div className="clay-card min-h-[1080px] p-8 lg:p-10 rounded-3xl">
+        <div className="clay-card min-h-[600px] sm:min-h-[800px] lg:min-h-[1080px] p-6 sm:p-8 lg:p-10 rounded-3xl">
           <div className="mb-6">
             <h2 className="text-xl font-semibold text-foreground">
               Interactive Sun Burst Plot

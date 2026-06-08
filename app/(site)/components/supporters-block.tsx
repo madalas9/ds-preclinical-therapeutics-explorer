@@ -32,7 +32,8 @@ export function SupportersBlock() {
               alt="University of Dayton"
               width={280}
               height={84}
-              className="h-16 md:h-20 w-auto object-contain"
+              className="object-contain"
+              style={{ height: "clamp(64px, 8vw, 80px)", width: "auto" }}
               priority
             />
           </Link>
@@ -49,7 +50,8 @@ export function SupportersBlock() {
               alt="Trisomy 21 Research Society"
               width={84}
               height={84}
-              className="h-16 md:h-20 w-16 md:w-20 object-contain"
+              className="object-contain"
+              style={{ height: "clamp(64px, 8vw, 80px)", width: "clamp(64px, 8vw, 80px)" }}
               priority
             />
           </Link>

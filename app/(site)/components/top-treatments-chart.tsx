@@ -49,8 +49,8 @@ export function TopTreatmentsChart({ data, tall = false }: TopTreatmentsChartPro
     displayName: d.treatment_short || d.canonical_name,
   }));
 
-  const chartHeight = tall ? 380 : 320;
-  const barSize = tall ? 28 : 22;
+  const chartHeight = tall ? 520 : 320;
+  const barSize = tall ? 32 : 22;
 
   return (
     <div style={{ width: "100%", height: chartHeight }}>
@@ -58,7 +58,7 @@ export function TopTreatmentsChart({ data, tall = false }: TopTreatmentsChartPro
         <BarChart
           data={chartData}
           layout="vertical"
-          margin={{ top: 8, right: 16, left: 8, bottom: 16 }}
+          margin={{ top: 8, right: 16, left: tall ? 12 : 8, bottom: 16 }}
           barSize={barSize}
           barCategoryGap="15%"
         >
@@ -71,8 +71,8 @@ export function TopTreatmentsChart({ data, tall = false }: TopTreatmentsChartPro
           <YAxis
             type="category"
             dataKey="displayName"
-            width={140}
-            tick={{ fill: "var(--text-primary)", fontSize: 11 }}
+            width={tall ? 150 : 140}
+            tick={{ fill: "var(--text-primary)", fontSize: tall ? 12 : 11 }}
             axisLine={false}
             tickLine={false}
           />

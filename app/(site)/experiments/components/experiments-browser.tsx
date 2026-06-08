@@ -1546,6 +1546,8 @@ export function ExperimentsBrowser({
                   size="icon-xs"
                   onClick={() => table.previousPage()}
                   disabled={!table.getCanPreviousPage()}
+                  className="min-h-[44px] min-w-[44px] touch-manipulation"
+                  aria-label="Previous page"
                 >
                   <ChevronLeft className="h-3.5 w-3.5" />
                 </Button>
@@ -1554,6 +1556,8 @@ export function ExperimentsBrowser({
                   size="icon-xs"
                   onClick={() => table.nextPage()}
                   disabled={!table.getCanNextPage()}
+                  className="min-h-[44px] min-w-[44px] touch-manipulation"
+                  aria-label="Next page"
                 >
                   <ChevronRight className="h-3.5 w-3.5" />
                 </Button>

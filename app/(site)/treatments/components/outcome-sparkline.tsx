@@ -18,7 +18,7 @@ const OUTCOME_LABELS: Record<EffectRating, string> = {
   "Partial Rescue": "Partial",
   "Differential Rescue (Dose-dependent)": "Differential",
   "No effect": "No effect",
-  NA: "NA",
+  NA: "NT",
 };
 
 export function OutcomeSparkline({ counts }: OutcomeSparklineProps) {

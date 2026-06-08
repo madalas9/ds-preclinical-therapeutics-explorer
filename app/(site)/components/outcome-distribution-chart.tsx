@@ -30,8 +30,10 @@ const SHORT_LABELS: Record<EffectRating, string> = {
   "Partial Rescue": "Partial",
   "Differential Rescue (Dose-dependent)": "Differential",
   "No effect": "No effect",
-  NA: "NA",
+  NA: "NT",
 };
+
+const NT_TOOLTIP = "Not Tested — this outcome axis was not measured in these studies.";
 
 export function OutcomeDistributionChart({
   data,
@@ -68,9 +70,11 @@ export function OutcomeDistributionChart({
               style={{
                 width: `${segment.width}%`,
                 backgroundColor: `var(--chart-${segment.outcome === "Rescue" ? "rescue" : segment.outcome === "Partial Rescue" ? "partial" : segment.outcome === "Differential Rescue (Dose-dependent)" ? "differential" : segment.outcome === "No effect" ? "no-effect" : "na"})`,
-                minWidth: segment.width > 0 ? "40px" : "0",
+                minWidth: segment.width > 0 ? "4px" : "0",
               }}
-              title={`${segment.outcome}: ${segment.count} (${segment.percentage}%)`}
+              title={segment.outcome === "NA"
+                ? `${NT_TOOLTIP}\n${segment.count} conditions (${segment.percentage}%)`
+                : `${segment.outcome}: ${segment.count} (${segment.percentage}%)`}
             >
               {segment.width >= 8 && (
                 <span

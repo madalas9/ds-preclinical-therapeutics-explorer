@@ -22,8 +22,10 @@ const OUTCOME_LABELS: Record<EffectRating, string> = {
   "Partial Rescue": "Partial",
   "Differential Rescue (Dose-dependent)": "Differential",
   "No effect": "No effect",
-  NA: "NA",
+  NA: "NT",
 };
+
+const NT_TOOLTIP = "Not Tested — this outcome axis was not measured in these studies.";
 
 function HorizontalStackedBar({
   counts,
@@ -70,7 +72,9 @@ function HorizontalStackedBar({
                 width: `${width}%`,
                 backgroundColor: OUTCOME_COLORS[outcome],
               }}
-              title={`${OUTCOME_LABELS[outcome]}: ${count} (${Math.round(width)}%)`}
+              title={outcome === "NA"
+                ? `${NT_TOOLTIP}\n${count} conditions (${Math.round(width)}%)`
+                : `${OUTCOME_LABELS[outcome]}: ${count} (${Math.round(width)}%)`}
             />
           );
         })}
