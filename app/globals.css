@@ -1,0 +1,398 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-atkinson);
+  --font-mono: var(--font-jetbrains);
+  --font-heading: var(--font-atkinson);
+
+  /* Design system colors from DESIGN_PLAN.md */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
+  /* Chart colors for outcome ratings */
+  --color-chart-rescue: var(--chart-rescue);
+  --color-chart-partial: var(--chart-partial);
+  --color-chart-no-effect: var(--chart-no-effect);
+  --color-chart-differential: var(--chart-differential);
+  --color-chart-na: var(--chart-na);
+
+  /* Accent colors */
+  --color-accent-rescue: var(--accent-rescue);
+  --color-accent-rescue-bg: var(--accent-rescue-bg);
+  --color-interactive: var(--interactive);
+  --color-interactive-hover: var(--interactive-hover);
+
+  /* shadcn/ui semantic colors */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Sidebar (shadcn defaults) */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Keep legacy chart-N for shadcn compatibility */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Colorblind-safe categorical palette (Okabe-Ito) */
+  --color-cat-1: var(--cat-1);
+  --color-cat-2: var(--cat-2);
+  --color-cat-3: var(--cat-3);
+  --color-cat-4: var(--cat-4);
+  --color-cat-5: var(--cat-5);
+  --color-cat-6: var(--cat-6);
+  --color-cat-7: var(--cat-7);
+  --color-cat-other: var(--cat-other);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ============================================
+   LIGHT THEME (default)
+   From DESIGN_PLAN.md §1
+   ============================================ */
+:root {
+  /* Core palette */
+  --background: #F8FAFC;        /* Slate 50 - page background */
+  --foreground: #0F172A;        /* Slate 900 - primary text */
+  --surface: #FFFFFF;           /* Cards, modals, table rows */
+  --surface-muted: #F1F5F9;     /* Slate 100 - alternating rows, sidebar */
+  --border: #E2E8F0;            /* Slate 200 - dividers, table borders */
+
+  /* Text hierarchy */
+  --text-primary: #0F172A;      /* Slate 900 */
+  --text-secondary: #475569;    /* Slate 600 */
+  --text-tertiary: #94A3B8;     /* Slate 400 - placeholders, disabled */
+
+  /* Accent - reserved EXCLUSIVELY for Rescue outcome */
+  --accent-rescue: #059669;     /* Emerald 600 */
+  --accent-rescue-bg: #D1FAE5;  /* Emerald 100 - badge background */
+
+  /* Interactive elements */
+  --interactive: #2563EB;       /* Blue 600 - links, buttons, focus */
+  --interactive-hover: #1D4ED8; /* Blue 700 - hover state */
+
+  /* Chart colors for 5 outcome ratings */
+  --chart-rescue: #059669;      /* Emerald 600 - strong accent for wins */
+  --chart-partial: #6EE7B7;     /* Emerald 300 - lighter green */
+  --chart-no-effect: #CBD5E1;   /* Slate 300 - neutral gray */
+  --chart-differential: #FBBF24; /* Amber 400 - conditional/complex */
+  --chart-na: #E2E8F0;          /* Slate 200 - non-data */
+
+  /* Colorblind-safe categorical palette (Okabe-Ito) */
+  --cat-1: #E69F00;             /* orange */
+  --cat-2: #56B4E9;             /* sky blue */
+  --cat-3: #009E73;             /* bluish green */
+  --cat-4: #F0E442;             /* yellow */
+  --cat-5: #0072B2;             /* deep blue */
+  --cat-6: #D55E00;             /* vermillion */
+  --cat-7: #CC79A7;             /* reddish purple */
+  --cat-other: #999999;
+
+  /* Treatment class palette (distinct from species/outcome) */
+  --tcls-1: #B07AA1;            /* muted purple - Polyphenol */
+  --tcls-2: #FF9DA7;            /* salmon pink - PUFA/Lipid */
+  --tcls-3: #9C755F;            /* warm brown - Nutrient */
+  --tcls-4: #BAB0AC;            /* taupe - Natural product */
+  --tcls-5: #4E79A7;            /* steel blue - Peptide */
+  --tcls-6: #76B7B2;            /* sage teal - Approved drug */
+  --tcls-7: #59A14F;            /* forest green - Small molecule */
+
+  /* Compound palette (12-color Tableau-style cycling) */
+  --comp-1:  #4E79A7;           /* steel blue */
+  --comp-2:  #F28E2B;           /* orange-red */
+  --comp-3:  #E15759;           /* red */
+  --comp-4:  #76B7B2;           /* sage teal */
+  --comp-5:  #59A14F;           /* forest green */
+  --comp-6:  #EDC948;           /* mustard */
+  --comp-7:  #B07AA1;           /* muted purple */
+  --comp-8:  #FF9DA7;           /* salmon */
+  --comp-9:  #9C755F;           /* warm brown */
+  --comp-10: #BAB0AC;           /* taupe */
+  --comp-11: #D37295;           /* rose */
+  --comp-12: #8CD17D;           /* lime */
+
+  /* Outcome type palette (Paul Tol bright) */
+  --otype-behavioral: #4477AA;  /* medium blue */
+  --otype-cellular: #228833;    /* medium green */
+  --otype-molecular: #CCBB44;   /* mustard yellow */
+
+  /* Model palette (Paul Tol bright + muted, 10 colors) */
+  --model-1:  #4477AA;          /* medium blue */
+  --model-2:  #228833;          /* medium green */
+  --model-3:  #CCBB44;          /* mustard */
+  --model-4:  #66CCEE;          /* cyan */
+  --model-5:  #EE6677;          /* rose */
+  --model-6:  #AA3377;          /* purple */
+  --model-7:  #BBBBBB;          /* gray */
+  --model-8:  #6699CC;          /* steel blue */
+  --model-9:  #997700;          /* olive */
+  --model-10: #994455;          /* wine */
+
+  /* shadcn/ui semantic mappings */
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #0F172A;           /* Slate 900 - primary buttons */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;         /* Slate 100 */
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #475569;  /* Slate 600 */
+  --accent: #F1F5F9;
+  --accent-foreground: #0F172A;
+  --destructive: #DC2626;       /* Red 600 */
+  --input: #E2E8F0;
+  --ring: #2563EB;              /* Blue 600 - focus rings */
+
+  /* Legacy chart vars for shadcn compatibility */
+  --chart-1: #059669;
+  --chart-2: #6EE7B7;
+  --chart-3: #CBD5E1;
+  --chart-4: #FBBF24;
+  --chart-5: #E2E8F0;
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #0F172A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #2563EB;
+}
+
+/* ============================================
+   DARK THEME
+   From DESIGN_PLAN.md §1.6
+   ============================================ */
+.dark {
+  /* Core palette */
+  --background: #0B1220;        /* Slate 950 deepened - page background */
+  --foreground: #F1F5F9;        /* Slate 100 - primary text */
+  --surface: #111827;           /* Slate 900 - cards, modals, table rows */
+  --surface-muted: #1F2937;     /* Slate 800 - alternating rows, sidebar */
+  --border: #334155;            /* Slate 700 - dividers, table borders */
+
+  /* Text hierarchy */
+  --text-primary: #F1F5F9;      /* Slate 100 */
+  --text-secondary: #94A3B8;    /* Slate 400 */
+  --text-tertiary: #64748B;     /* Slate 500 - placeholders, disabled */
+
+  /* Accent - reserved EXCLUSIVELY for Rescue outcome */
+  --accent-rescue: #10B981;     /* Emerald 500 - brighter for dark bg */
+  --accent-rescue-bg: #064E3B;  /* Emerald 900 - badge background */
+
+  /* Interactive elements */
+  --interactive: #60A5FA;       /* Blue 400 - lighter for dark bg */
+  --interactive-hover: #3B82F6; /* Blue 500 - hover state */
+
+  /* Chart colors for 5 outcome ratings (dark mode) */
+  --chart-rescue: #10B981;      /* Emerald 500 */
+  --chart-partial: #34D399;     /* Emerald 400 */
+  --chart-no-effect: #475569;   /* Slate 600 */
+  --chart-differential: #F59E0B; /* Amber 500 */
+  --chart-na: #334155;          /* Slate 700 */
+
+  /* Colorblind-safe categorical palette (Okabe-Ito, dark mode) */
+  --cat-1: #FFB84D;
+  --cat-2: #7AC8F2;
+  --cat-3: #2DBC93;
+  --cat-4: #F5EC6B;
+  --cat-5: #2D8FCB;
+  --cat-6: #E07433;
+  --cat-7: #DD96BC;
+  --cat-other: #B0B0B0;
+
+  /* Treatment class palette (dark mode) */
+  --tcls-1: #CB99C0;            /* muted purple */
+  --tcls-2: #FFB5BC;            /* salmon pink */
+  --tcls-3: #BF9080;            /* warm brown */
+  --tcls-4: #D4CCC8;            /* taupe */
+  --tcls-5: #6E97C0;            /* steel blue */
+  --tcls-6: #95CFC9;            /* sage teal */
+  --tcls-7: #7CC272;            /* forest green */
+
+  /* Compound palette (dark mode, ~15% lighter) */
+  --comp-1:  #6E97C0;           /* steel blue */
+  --comp-2:  #F5A54D;           /* orange-red */
+  --comp-3:  #E87779;           /* red */
+  --comp-4:  #95CFC9;           /* sage teal */
+  --comp-5:  #7CC272;           /* forest green */
+  --comp-6:  #F2D56E;           /* mustard */
+  --comp-7:  #CB99C0;           /* muted purple */
+  --comp-8:  #FFB5BC;           /* salmon */
+  --comp-9:  #BF9080;           /* warm brown */
+  --comp-10: #D4CCC8;           /* taupe */
+  --comp-11: #E08CAF;           /* rose */
+  --comp-12: #A6E09A;           /* lime */
+
+  /* Model palette (dark mode, ~15% lighter) */
+  --model-1:  #6699CC;          /* medium blue */
+  --model-2:  #44AA55;          /* medium green */
+  --model-3:  #DDCC66;          /* mustard */
+  --model-4:  #88DDFF;          /* cyan */
+  --model-5:  #FF8899;          /* rose */
+  --model-6:  #CC5599;          /* purple */
+  --model-7:  #CCCCCC;          /* gray */
+  --model-8:  #88AADD;          /* steel blue */
+  --model-9:  #BB9922;          /* olive */
+  --model-10: #BB6677;          /* wine */
+
+  /* Outcome type palette (dark mode) */
+  --otype-behavioral: #6699CC;  /* medium blue */
+  --otype-cellular: #44AA55;    /* medium green */
+  --otype-molecular: #DDCC66;   /* mustard yellow */
+
+  /* shadcn/ui semantic mappings */
+  --card: #111827;              /* Slate 900 */
+  --card-foreground: #F1F5F9;   /* Slate 100 */
+  --popover: #111827;
+  --popover-foreground: #F1F5F9;
+  --primary: #F1F5F9;           /* Slate 100 - primary buttons */
+  --primary-foreground: #0F172A; /* Slate 900 */
+  --secondary: #1F2937;         /* Slate 800 */
+  --secondary-foreground: #F1F5F9;
+  --muted: #1F2937;
+  --muted-foreground: #94A3B8;  /* Slate 400 */
+  --accent: #1F2937;
+  --accent-foreground: #F1F5F9;
+  --destructive: #EF4444;       /* Red 500 - brighter for dark bg */
+  --input: #334155;             /* Slate 700 */
+  --ring: #60A5FA;              /* Blue 400 - focus rings */
+
+  /* Legacy chart vars for shadcn compatibility */
+  --chart-1: #10B981;
+  --chart-2: #34D399;
+  --chart-3: #475569;
+  --chart-4: #F59E0B;
+  --chart-5: #334155;
+
+  /* Sidebar */
+  --sidebar: #111827;
+  --sidebar-foreground: #F1F5F9;
+  --sidebar-primary: #F1F5F9;
+  --sidebar-primary-foreground: #0F172A;
+  --sidebar-accent: #1F2937;
+  --sidebar-accent-foreground: #F1F5F9;
+  --sidebar-border: #334155;
+  --sidebar-ring: #60A5FA;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans antialiased;
+  }
+}
+
+/* Reduced motion support per DESIGN_PLAN.md §6 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   TIER 1 — CLAYMORPHISM UTILITIES
+   Landing page only (per DESIGN_PLAN.md §1.5)
+   ============================================ */
+
+.clay-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0 0 rgba(15, 23, 42, 0.06);
+}
+
+.dark .clay-card {
+  box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+.clay-shadow-sm {
+  box-shadow: 4px 4px 0 0 rgba(15, 23, 42, 0.12);
+}
+
+.dark .clay-shadow-sm {
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.45);
+}
+
+/* ============================================
+   STICKY SCROLLBAR — /experiments page
+   Cross-platform visible scrollbar thumb
+   ============================================ */
+
+div.sticky-scrollbar::-webkit-scrollbar {
+  height: 14px !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+div.sticky-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--text-tertiary) !important;
+  border-radius: 7px;
+  min-width: 40px;
+}
+div.sticky-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary) !important;
+}
+div.sticky-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+div.sticky-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-tertiary) transparent;
+}
