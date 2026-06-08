@@ -5,7 +5,7 @@ tested in Down syndrome animal models. Built for the Sathyanesan Lab
 at the University of Dayton, in support of the global Down syndrome
 research community led by the Trisomy 21 Research Society (T21RS).
 
-**Live app**: (URL will be added after deployment)
+**Live app**: https://ds-preclinical-therapeutics-explore.vercel.app
 
 ## Database Snapshot
 
