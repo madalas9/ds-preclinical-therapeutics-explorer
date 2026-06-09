@@ -10,7 +10,7 @@ const USE_HF_API =
 // ============================================================
 
 const HF_ENDPOINT =
-  "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2";
+  "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction";
 
 async function embedViaHuggingFace(text: string): Promise<number[]> {
   const hfToken = process.env.HF_TOKEN;
@@ -25,9 +25,9 @@ async function embedViaHuggingFace(text: string): Promise<number[]> {
 
   async function fetchEmbedding(): Promise<Response> {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout
+    const timeout = setTimeout(() => controller.abort(), 20000);
     try {
-      const resp = await fetch(HF_ENDPOINT, {
+      return await fetch(HF_ENDPOINT, {
         method: "POST",
         headers,
         body: JSON.stringify({
@@ -36,7 +36,34 @@ async function embedViaHuggingFace(text: string): Promise<number[]> {
         }),
         signal: controller.signal,
       });
-      return resp;
+    } catch (err: unknown) {
+      clearTimeout(timeout);
+      // Retry once on DNS/network errors
+      const errAny = err as { cause?: { code?: string }; message?: string };
+      if (
+        errAny?.cause?.code === "ENOTFOUND" ||
+        errAny?.cause?.code === "ECONNRESET" ||
+        errAny?.message?.includes("fetch failed")
+      ) {
+        console.log("[embedder-server] DNS/network error, retrying in 2s...");
+        await new Promise((r) => setTimeout(r, 2000));
+        const retryController = new AbortController();
+        const retryTimeout = setTimeout(() => retryController.abort(), 20000);
+        try {
+          return await fetch(HF_ENDPOINT, {
+            method: "POST",
+            headers,
+            body: JSON.stringify({
+              inputs: text,
+              options: { wait_for_model: true },
+            }),
+            signal: retryController.signal,
+          });
+        } finally {
+          clearTimeout(retryTimeout);
+        }
+      }
+      throw err;
     } finally {
       clearTimeout(timeout);
     }
