@@ -9,6 +9,9 @@ const USE_HF_API =
 // HuggingFace Inference API implementation
 // ============================================================
 
+const HF_ENDPOINT =
+  "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2";
+
 async function embedViaHuggingFace(text: string): Promise<number[]> {
   const hfToken = process.env.HF_TOKEN;
   const headers: Record<string, string> = {
@@ -18,13 +21,13 @@ async function embedViaHuggingFace(text: string): Promise<number[]> {
     headers["Authorization"] = `Bearer ${hfToken}`;
   }
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000);
+  console.log("[embedder-server] calling HuggingFace API, hasToken:", !!hfToken);
 
-  try {
-    const response = await fetch(
-      "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2",
-      {
+  async function fetchEmbedding(): Promise<Response> {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout
+    try {
+      const resp = await fetch(HF_ENDPOINT, {
         method: "POST",
         headers,
         body: JSON.stringify({
@@ -32,30 +35,44 @@ async function embedViaHuggingFace(text: string): Promise<number[]> {
           options: { wait_for_model: true },
         }),
         signal: controller.signal,
-      }
-    );
-
-    if (!response.ok) {
-      const errBody = await response.text();
-      throw new Error(`HuggingFace API error ${response.status}: ${errBody}`);
+      });
+      return resp;
+    } finally {
+      clearTimeout(timeout);
     }
-
-    const result = await response.json();
-
-    // API returns nested array for batch, flat array for single input
-    // Handle both cases
-    const embedding: number[] = Array.isArray(result[0])
-      ? (result[0] as number[])
-      : (result as number[]);
-
-    if (embedding.length !== 384) {
-      throw new Error(`Expected 384-dim embedding, got ${embedding.length}`);
-    }
-
-    return embedding;
-  } finally {
-    clearTimeout(timeout);
   }
+
+  let response = await fetchEmbedding();
+
+  // Handle cold start (503 with model loading message)
+  if (response.status === 503) {
+    const body = await response.json().catch(() => ({})) as { error?: string; estimated_time?: number };
+    if (body.error && body.error.toLowerCase().includes("loading")) {
+      const waitSecs = Math.min(body.estimated_time || 20, 35);
+      console.log(`[embedder-server] HF model loading, waiting ${waitSecs}s...`);
+      await new Promise((r) => setTimeout(r, waitSecs * 1000));
+      response = await fetchEmbedding();
+    }
+  }
+
+  if (!response.ok) {
+    const errText = await response.text().catch(() => "unknown error");
+    throw new Error(`HuggingFace API error ${response.status}: ${errText}`);
+  }
+
+  const result = await response.json();
+
+  // API returns nested array for batch, flat array for single input
+  const embedding: number[] = Array.isArray(result[0])
+    ? (result[0] as number[])
+    : (result as number[]);
+
+  if (embedding.length !== 384) {
+    throw new Error(`Expected 384-dim embedding, got ${embedding.length}`);
+  }
+
+  console.log("[embedder-server] HF embedding OK, dims:", embedding.length);
+  return embedding;
 }
 
 // ============================================================

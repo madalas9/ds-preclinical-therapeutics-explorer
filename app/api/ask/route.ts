@@ -1,5 +1,5 @@
 export const runtime = "nodejs";
-export const maxDuration = 90;
+export const maxDuration = 120;
 
 import { streamText, generateText } from "ai";
 import { z } from "zod";
