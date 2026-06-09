@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 export const maxDuration = 120;
 
-import { streamText, generateText } from "ai";
+import { streamText } from "ai";
 import { z } from "zod";
 import { getFlyerProvider } from "@/src/lib/flyer-provider";
 import { retrieve } from "@/src/lib/retrieval";
@@ -318,53 +318,7 @@ export async function POST(request: Request) {
 
     console.log("[/api/ask]", model, answerFormat, answerDepth, deepDive ? "deep" : "std", maxTokens);
 
-    // GPT-5.5: use non-streaming generateText
-    if (model === "gpt-5.5") {
-      try {
-        const result = await generateText({
-          model: provider.chat(model),
-          system: systemMessage,
-          prompt: userMessage,
-          maxOutputTokens: maxTokens,
-        });
-
-        recordActualUsage(result.usage?.totalTokens ?? estimatedTokens, estimatedTokens);
-
-        if (!result.text || !result.text.trim()) {
-          console.log("[/api/ask] gpt-5.5 empty response");
-          return Response.json(
-            {
-              error: "Model returned empty response",
-              message: "GPT-5.5 returned no text. Please try again or use GPT-5.4.",
-              model: "gpt-5.5",
-            },
-            { status: 502 }
-          );
-        }
-
-        console.log("[/api/ask] gpt-5.5 done, tokens:", result.usage?.totalTokens);
-        return new Response(result.text, {
-          status: 200,
-          headers: {
-            "Content-Type": "text/plain; charset=utf-8",
-            ...sourceHeaders,
-            "X-Stream-Mode": "nonstream",
-          },
-        });
-      } catch (err) {
-        console.error("[/api/ask] gpt-5.5 error:", err);
-        return Response.json(
-          {
-            error: "Model request failed",
-            message: err instanceof Error ? err.message : "Unknown error",
-            model: "gpt-5.5",
-          },
-          { status: 502 }
-        );
-      }
-    }
-
-    // GPT-5.4: streaming
+    // Use streamText for all models (GPT-5.4 and GPT-5.5)
     const result = streamText({
       model: provider.chat(model),
       system: systemMessage,
