@@ -42,8 +42,8 @@ export function getFlyerProvider() {
           }
 
           // All three auth headers for APIM compatibility
-          const headers = {
-            ...(options.headers as Record<string, string>),
+          // Do NOT spread options.headers — AI SDK passes Unicode chars that break Vercel
+          const headers: Record<string, string> = {
             "Content-Type": "application/json",
             "api-key": apiKey,
             "Authorization": `Bearer ${apiKey}`,
