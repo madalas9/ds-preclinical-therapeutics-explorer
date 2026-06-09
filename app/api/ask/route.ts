@@ -370,9 +370,14 @@ export async function POST(request: Request) {
       system: systemMessage,
       prompt: userMessage,
       maxOutputTokens: maxTokens,
-      onFinish: ({ usage, finishReason }) => {
+      onFinish: ({ usage, finishReason, text }) => {
+        console.log("[/api/ask] stream finished:", {
+          model: model,
+          finishReason: finishReason,
+          textLength: text?.length ?? 0,
+          tokens: usage?.totalTokens,
+        });
         recordActualUsage(usage?.totalTokens ?? estimatedTokens, estimatedTokens);
-        console.log("[/api/ask] gpt-5.4 done:", finishReason, "tokens:", usage?.totalTokens);
       },
     });
 
