@@ -396,3 +396,299 @@ div.sticky-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: var(--text-tertiary) transparent;
 }
+
+/* ============================================
+   EVIDENCE CARD — /ask page
+   Research-grade answer presentation
+   ============================================ */
+
+.evidence-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.evidence-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.evidence-card-content {
+  padding: 1.5rem 1.5rem;
+}
+
+.evidence-card-footer {
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   CITATION CHIPS — inline pills for DST citations
+   ============================================ */
+
+.citation-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  margin: 0 0.125rem;
+  border-radius: 0.375rem;
+  background: var(--accent-rescue-bg);
+  border: 1px solid color-mix(in srgb, var(--accent-rescue) 25%, transparent);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: background-color 0.15s ease;
+}
+
+.citation-chip:hover {
+  background: color-mix(in srgb, var(--accent-rescue) 20%, transparent);
+}
+
+.citation-id {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--accent-rescue);
+}
+
+.citation-sep {
+  color: var(--accent-rescue);
+  opacity: 0.5;
+}
+
+.citation-author {
+  color: var(--accent-rescue);
+  font-weight: 500;
+}
+
+.citation-icon {
+  width: 0.625rem;
+  height: 0.625rem;
+  color: var(--accent-rescue);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   RESEARCH PROSE — scientific content styling
+   ============================================ */
+
+.research-prose {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+
+.research-h1 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.research-h1:first-child {
+  margin-top: 0;
+}
+
+.research-h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.research-h2:first-child {
+  margin-top: 0;
+}
+
+.research-h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.research-h3:first-child {
+  margin-top: 0;
+}
+
+.research-h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.research-h4:first-child {
+  margin-top: 0;
+}
+
+.research-p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.research-p:first-child {
+  margin-top: 0;
+}
+
+.research-p:last-child {
+  margin-bottom: 0;
+}
+
+.research-ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.research-ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.research-li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.research-li::marker {
+  color: var(--text-tertiary);
+}
+
+.research-blockquote {
+  margin: 1.25rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid color-mix(in srgb, var(--accent-rescue) 40%, transparent);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.research-hr {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.research-code-inline {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.research-pre {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  font-size: 0.8125rem;
+}
+
+/* ============================================
+   RESEARCH TABLES — full-width scrollable
+   NO truncation, NO line-clamp, NO ellipsis
+   ============================================ */
+
+.research-table-wrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.research-table {
+  width: 100%;
+  min-width: max-content;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+}
+
+.research-thead {
+  background: var(--surface-muted);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.research-tbody {
+  background: var(--surface);
+}
+
+.research-tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.1s ease;
+}
+
+.research-tr:last-child {
+  border-bottom: none;
+}
+
+.research-tbody .research-tr:hover {
+  background: var(--surface-muted);
+}
+
+.research-tbody .research-tr:nth-child(even) {
+  background: color-mix(in srgb, var(--surface-muted) 50%, var(--surface));
+}
+
+.research-tbody .research-tr:nth-child(even):hover {
+  background: var(--surface-muted);
+}
+
+.research-th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+.research-td {
+  padding: 0.625rem 1rem;
+  color: var(--text-primary);
+  vertical-align: top;
+  /* NO truncation, NO line-clamp */
+  white-space: normal;
+  word-wrap: break-word;
+  min-width: 100px;
+  max-width: 350px;
+}
+
+/* Important columns should not wrap */
+.research-td:first-child {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Citation column stays compact */
+.research-td:last-child {
+  white-space: nowrap;
+}
