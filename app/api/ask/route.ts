@@ -10,6 +10,15 @@ import { acquire, recordActualUsage } from "@/src/lib/throttle";
 
 const VALID_MODELS = ["gpt-5.4", "gpt-5.5"] as const;
 
+// Log environment on module load (once per cold start)
+console.log("[/api/ask] env check:", {
+  hasFlyerKey: !!process.env.FLYER_API_KEY,
+  hasFlyerUrl: !!process.env.FLYER_BASE_URL,
+  isVercel: process.env.VERCEL === "1",
+  hasHfToken: !!process.env.HF_TOKEN,
+  nodeEnv: process.env.NODE_ENV,
+});
+
 const MessageSchema = z.object({
   role: z.enum(["user", "assistant"]),
   content: z.string().max(10000),
