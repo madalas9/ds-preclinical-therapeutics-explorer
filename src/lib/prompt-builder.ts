@@ -28,7 +28,10 @@ const SYSTEM_MESSAGE_BASE = `You are a scientific research assistant for the Dow
 - Every citation must come from retrieved evidence
 - Keep citations compact and inline
 - Never fabricate DOIs or data
-- Use 'NT' for Not Tested, never 'NA'`;
+- Use 'NT' for Not Tested, never 'NA'
+
+## Evidence Blocks
+Each evidence block aggregates all curated outcomes from one paper. If an outcome axis or specific task is not listed in a block, that paper did not curate it — do not infer 'not tested.'`;
 
 const PARAGRAPH_INSTRUCTIONS = `
 
@@ -145,22 +148,37 @@ Continue a previous answer that was cut off:
 5. Keep this continuation concise`;
 
 function formatStructuredHit(hit: StructuredHit): string {
-  const lines = [
-    `**${hit.treatment_identifier} — ${hit.canonical_name}**`,
-    `Model: ${hit.species} / ${hit.model_name} | Sex: ${hit.sex}`,
-  ];
+  const lines: string[] = [];
 
-  if (hit.behavior_task && hit.behavior_task !== "NA" && hit.behavior_task !== "NT") {
-    lines.push(`Behavior: ${hit.behavior_task} → ${hit.behavior_effect || "NT"}`);
-  }
-  if (hit.cellular_effect && hit.cellular_effect !== "NA" && hit.cellular_effect !== "NT") {
-    lines.push(`Cellular: ${hit.cellular_effect}`);
-  }
-  if (hit.molecular_effect && hit.molecular_effect !== "NA" && hit.molecular_effect !== "NT") {
-    lines.push(`Molecular: ${hit.molecular_effect}`);
+  lines.push(`**${hit.treatment_identifier} · ${hit.reference} · ${hit.treatment_short} · ${hit.species}/${hit.model_short}**`);
+
+  const subjectParts: string[] = [];
+  if (hit.sex) subjectParts.push(hit.sex);
+  if (hit.doses.length > 0) subjectParts.push(hit.doses.join(", "));
+  if (hit.routes.length > 0) subjectParts.push(hit.routes.join(", "));
+  if (hit.ages_at_treatment.length > 0) subjectParts.push(hit.ages_at_treatment.join(", "));
+  if (hit.ages_at_testing.length > 0) subjectParts.push(`tested ${hit.ages_at_testing.join(", ")}`);
+  if (subjectParts.length > 0) {
+    lines.push(`  Subjects: ${subjectParts.join(" · ")}`);
   }
 
-  lines.push(`Ref: ${hit.reference} | DOI: ${hit.doi}`);
+  if (hit.behavioral_outcomes.length > 0) {
+    const outcomes = hit.behavioral_outcomes.map((o) => `${o.task} = ${o.rating}`).join("; ");
+    lines.push(`  Behavioral: ${outcomes}`);
+  }
+
+  if (hit.cellular_outcomes.length > 0) {
+    const outcomes = hit.cellular_outcomes.map((o) => `${o.function} = ${o.rating}`).join("; ");
+    lines.push(`  Cellular/molecular: ${outcomes}`);
+  }
+
+  if (hit.molecular_outcomes.length > 0) {
+    const outcomes = hit.molecular_outcomes.map((o) => `${o.target} = ${o.rating}`).join("; ");
+    lines.push(`  Gene/protein: ${outcomes}`);
+  }
+
+  lines.push(`  [Aggregated from ${hit.n_experimental_rows} experimental row${hit.n_experimental_rows > 1 ? "s" : ""} in this paper]`);
+  lines.push(`  DOI: ${hit.doi}`);
 
   return lines.join("\n");
 }

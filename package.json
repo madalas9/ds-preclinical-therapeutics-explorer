@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "tsx scripts/build-paper-summaries.ts",
     "dev": "next dev",
+    "prebuild": "tsx scripts/build-paper-summaries.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "ingest": "tsx scripts/ingest-papers.ts",
-    "enrich": "tsx scripts/enrich-papers-fulltext.ts"
+    "enrich": "tsx scripts/enrich-papers-fulltext.ts",
+    "build:summaries": "tsx scripts/build-paper-summaries.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.68",

@@ -1,0 +1,4739 @@
+[
+  {
+    "group_id": "DST01|Das et al. 2013|Ts65Dn",
+    "treatment_identifier": "DST01",
+    "treatment": "SAG (Small molecule agonist)",
+    "treatment_short": "SAG",
+    "reference": "Das et al. 2013",
+    "doi": "https://doi.org/10.1126/scitranslmed.3005983",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "20 μg/g"
+    ],
+    "routes": [
+      "single subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P0"
+    ],
+    "ages_at_testing": [
+      "P6, P21-P28, P90-P120"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Y maze test",
+        "rating": "No effect"
+      },
+      {
+        "task": "Open field test",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Cerebellar morphology (area/GC density)",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Long-Term Potentiation (LTP), NMDA/AMPA receptor ratio",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Paired-pulse ratios (PPRs), Long Term Depression (LTD)",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Smoothened (Smo)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "cerebellum",
+      "CA1 field of hippocampus",
+      "hippocampus granule cell layer"
+    ],
+    "celltypes": [
+      "granule cell",
+      "cerebellar granule cell precursor",
+      "hippocampal pyramidal neuron",
+      "Purkinje cell"
+    ],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "group_id": "DST01|Gutierrez-Castellanos et al. 2013|Ts65Dn",
+    "treatment_identifier": "DST01",
+    "treatment": "SAG (Small molecule agonist)",
+    "treatment_short": "SAG",
+    "reference": "Gutierrez-Castellanos et al. 2013",
+    "doi": "https://doi.org/10.1523/jneurosci.2198-13.2013",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "20 μg/g"
+    ],
+    "routes": [
+      "single subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P0"
+    ],
+    "ages_at_testing": [
+      "Not mentioned"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Vestibulo-ocular reflex (VOR)",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Cerebellar size",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "vestibulocerebellum"
+    ],
+    "celltypes": [
+      "cerebellar granule cell"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      4
+    ]
+  },
+  {
+    "group_id": "DST01|Roper et al. 2006|Ts65Dn",
+    "treatment_identifier": "DST01",
+    "treatment": "SAG (Small molecule agonist)",
+    "treatment_short": "SAG",
+    "reference": "Roper et al. 2006",
+    "doi": "https://doi.org/10.1073/pnas.0510750103",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "20 μg/g"
+    ],
+    "routes": [
+      "single subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P0"
+    ],
+    "ages_at_testing": [
+      "P6"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "Mitotic GCP number, GCP number",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "cerebellum"
+    ],
+    "celltypes": [
+      "cerebellar granule cell precursor"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      3
+    ]
+  },
+  {
+    "group_id": "DST02|Giacomini et al., 2015|Ts65Dn",
+    "treatment_identifier": "DST02",
+    "treatment": "ELND006 (ELN) (Selective gamma-secretase inhibitor)",
+    "treatment_short": "ELND006",
+    "reference": "Giacomini et al., 2015",
+    "doi": "https://doi.org/10.1016/j.nbd.2015.08.001",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "30 mg/kg"
+    ],
+    "routes": [
+      "daily subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P15"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "Neural precursor proliferation",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Neural precursor differentiation",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Granule cell density (Hippocampus)",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Synapse development (SYN, PSD-95 density)",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "AICD",
+        "rating": "No effect"
+      },
+      {
+        "target": "Ptch1",
+        "rating": "No effect"
+      },
+      {
+        "target": "APP and GSK3β",
+        "rating": "No effect"
+      },
+      {
+        "target": "phosphorylated GSK3β",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "postnatal subventricular zone",
+      "hippocampus granule cell layer",
+      "dentate gyrus"
+    ],
+    "celltypes": [
+      "neuronal-restricted precursor"
+    ],
+    "n_experimental_rows": 4,
+    "source_row_indices": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "group_id": "DST03|García-Cerro et al., 2020|Ts65Dn",
+    "treatment_identifier": "DST03",
+    "treatment": "Oleic Acid",
+    "treatment_short": "Oleic Acid",
+    "reference": "García-Cerro et al., 2020",
+    "doi": "https://doi.org/10.1093/jn/nxaa074",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "400 mg/kg"
+    ],
+    "routes": [
+      "daily subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "E10-P2"
+    ],
+    "ages_at_testing": [
+      "P2, P30-P45"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Granule cell layer volume",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Proliferation of granule cells",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "PSD95 (postsynaptic density protein 95)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus granule cell layer"
+    ],
+    "celltypes": [
+      "neural progenitor cell",
+      "granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      9,
+      10
+    ]
+  },
+  {
+    "group_id": "DST03|Vidal et al. (2020)|Ts65Dn",
+    "treatment_identifier": "DST03",
+    "treatment": "Oleic Acid",
+    "treatment_short": "Oleic Acid",
+    "reference": "Vidal et al. (2020)",
+    "doi": "https://doi.org/10.1080/1028415x.2020.1861897",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "400 mg/kg"
+    ],
+    "routes": [
+      "daily subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P60-P90"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Granule cell layer volume",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Proliferation of granule cells",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Synaptophysin (SYN) (pre-synaptic); PSD95 (post-synaptic)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "dentate gyrus of hippocampal formation",
+      "hippocampus"
+    ],
+    "celltypes": [
+      "granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      13,
+      14
+    ]
+  },
+  {
+    "group_id": "DST04|García-Cerro et al., 2020|Ts65Dn",
+    "treatment_identifier": "DST04",
+    "treatment": "Linolenic Acid",
+    "treatment_short": "Linolenic Acid",
+    "reference": "García-Cerro et al., 2020",
+    "doi": "https://doi.org/10.1093/jn/nxaa074",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "500 mg/kg"
+    ],
+    "routes": [
+      "daily subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "E10-P2"
+    ],
+    "ages_at_testing": [
+      "P2, P30-P45"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Granule cell layer volume",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Proliferation of granule cells",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "PSD95 (postsynaptic density protein 95)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus granule cell layer"
+    ],
+    "celltypes": [
+      "neural progenitor cell",
+      "granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      11,
+      12
+    ]
+  },
+  {
+    "group_id": "DST04|Vidal et al. (2020)|Ts65Dn",
+    "treatment_identifier": "DST04",
+    "treatment": "Linolenic Acid",
+    "treatment_short": "Linolenic Acid",
+    "reference": "Vidal et al. (2020)",
+    "doi": "https://doi.org/10.1080/1028415x.2020.1861897",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "500 mg/kg"
+    ],
+    "routes": [
+      "daily subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P60-P90"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Granule cell layer volume",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Proliferation of granule cells",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Synaptophysin (SYN) (pre-synaptic); PSD95 (post-synaptic)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "dentate gyrus of hippocampal formation; hippocampus"
+    ],
+    "celltypes": [
+      "granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      15,
+      16
+    ]
+  },
+  {
+    "group_id": "DST05|Giacomini et al. (2018)|Ts65Dn",
+    "treatment_identifier": "DST05",
+    "treatment": "Corn Oil",
+    "treatment_short": "Corn Oil",
+    "reference": "Giacomini et al. (2018)",
+    "doi": "https://doi.org/10.1016/j.brainresbull.2018.06.009",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "10 μl/g"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "4M-5M"
+    ],
+    "ages_at_testing": [
+      "4M-5M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Contextual Fear Conditioning (CFC)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Granule cell number",
+        "rating": "Rescue"
+      },
+      {
+        "function": "dendritic branching",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "dentate gyrus of hippocampal formation"
+    ],
+    "celltypes": [
+      "granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      17,
+      18
+    ]
+  },
+  {
+    "group_id": "DST06|Zmijewski et al. (2015)|BALB/c",
+    "treatment_identifier": "DST06",
+    "treatment": "Fish Oil (Omega-3 PUFAs)",
+    "treatment_short": "Fish Oil",
+    "reference": "Zmijewski et al. (2015)",
+    "doi": "https://doi.org/10.1016/j.nutres.2015.02.007",
+    "species": "Mouse",
+    "model_name": "BALB/c",
+    "model_short": "BALB/c",
+    "sex": "Females only",
+    "doses": [
+      "0.84% wt/wt",
+      "1.46% wt/wt"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "4W",
+      "5W"
+    ],
+    "ages_at_testing": [
+      "8W",
+      "9W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Hippocampus RCAN1 expression (BALB/c)",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Hippocampus RCAN1-1 mRNA expression (BALB/c)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus",
+      "spleen"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      19,
+      20
+    ]
+  },
+  {
+    "group_id": "DST06|Zmijewski et al. (2015)|C57BL/6J",
+    "treatment_identifier": "DST06",
+    "treatment": "Fish Oil (Omega-3 PUFAs)",
+    "treatment_short": "Fish Oil",
+    "reference": "Zmijewski et al. (2015)",
+    "doi": "https://doi.org/10.1016/j.nutres.2015.02.007",
+    "species": "Mouse",
+    "model_name": "C57BL/6J",
+    "model_short": "C57BL/6J",
+    "sex": "Females only",
+    "doses": [
+      "1.9% wt/wt"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E0-6W"
+    ],
+    "ages_at_testing": [
+      "6W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Hippocampus and Spleen RCAN1-1 mRNA expression (C57BL)",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Hippocampus RCAN1 expression (C57BL)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      21,
+      22
+    ]
+  },
+  {
+    "group_id": "DST07|Rueda et al. (2020)|Ts65Dn",
+    "treatment_identifier": "DST07",
+    "treatment": "Curcumin (Prenatal)",
+    "treatment_short": "Curcumin",
+    "reference": "Rueda et al. (2020)",
+    "doi": "https://doi.org/10.1093/jn/nxaa207",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "300 mg/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E10-P2"
+    ],
+    "ages_at_testing": [
+      "P2, P45"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze (MWM)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Granule cell layer volume",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Proliferation of granule cells",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "hippocampus granule cell layer"
+    ],
+    "celltypes": [
+      "granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      23,
+      24
+    ]
+  },
+  {
+    "group_id": "DST08|Shichiri et al. (2011)|Ts65Dn",
+    "treatment_identifier": "DST08",
+    "treatment": "α-tocopherol",
+    "treatment_short": "α-tocopherol",
+    "reference": "Shichiri et al. (2011)",
+    "doi": "https://doi.org/10.1016/j.freeradbiomed.2011.03.023",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "0.1% (w/w)"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E0-12W"
+    ],
+    "ages_at_testing": [
+      "10W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Elevated-plus maze task",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Morris water maze test",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Spontaneous motor activity",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Oxidative stress",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Lipid peroxidation",
+        "rating": "Rescue"
+      },
+      {
+        "function": "Hippocampal hypocellularity",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "dentate gyrus of hippocampal formation",
+      "CA1 field of hippocampus",
+      "CA3 field of hippocampus",
+      "hippocampus granule cell layer"
+    ],
+    "celltypes": [
+      "granule cell"
+    ],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      25,
+      26,
+      27
+    ]
+  },
+  {
+    "group_id": "DST09|Panagaki et al. (2024)|Dp(17)3Yey",
+    "treatment_identifier": "DST09",
+    "treatment": "Aminooxyacetic acid (AOAA), a cystathionine β-synthase (CBS) inhibitor",
+    "treatment_short": "AOAA",
+    "reference": "Panagaki et al. (2024)",
+    "doi": "https://doi.org/10.1007/s11357-024-01146-8",
+    "species": "Mouse",
+    "model_name": "Dp(17)3Yey",
+    "model_short": "Dp(17)3Yey",
+    "sex": "Males and Females",
+    "doses": [
+      "1 mg/kg/day"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "5W-8W"
+    ],
+    "ages_at_testing": [
+      "6W - 8W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "T-maze spontaneous alternation, Open Field, Novel Object Recognition",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "CBS/H₂S pathway activity, mitochondrial ATP production, ER stress, autophagy, persulfidation",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "CBS, 3-MST, CSE, TST, ETHE1, PERK, ATF6, CHOP, LC3B, PSD95, Synaptophysin",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "Brain"
+    ],
+    "celltypes": [
+      "astrocyte",
+      "neuron"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      28
+    ]
+  },
+  {
+    "group_id": "DST10|Di Domenico et al. (2019)|Ts65Dn",
+    "treatment_identifier": "DST10",
+    "treatment": "Rapamycin",
+    "treatment_short": "Rapamycin",
+    "reference": "Di Domenico et al. (2019)",
+    "doi": "https://doi.org/10.1016/j.redox.2019.101162",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "1 μg/mouse"
+    ],
+    "routes": [
+      "intranasal"
+    ],
+    "ages_at_treatment": [
+      "6M-9M"
+    ],
+    "ages_at_testing": [
+      "6M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "mTOR signaling, oxidative stress, protein carbonylation, 4-HNE adduct formation, autophagy, mitochondrial function",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "mTOR, p70S6K, 4-HNE-modified proteins, LC3-II, Beclin-1, SOD2, Catalase, GPx",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "Frontal cortex"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      31
+    ]
+  },
+  {
+    "group_id": "DST10|Tramutola et al. (2018)|Ts65Dn",
+    "treatment_identifier": "DST10",
+    "treatment": "Rapamycin",
+    "treatment_short": "Rapamycin",
+    "reference": "Tramutola et al. (2018)",
+    "doi": "https://doi.org/10.1186/s40035-018-0133-9",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "1 μg/mouse"
+    ],
+    "routes": [
+      "intranasal"
+    ],
+    "ages_at_treatment": [
+      "6M-9M"
+    ],
+    "ages_at_testing": [
+      "6M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Novel Object Recognition (NOR), Radial Arm Maze (RAM)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "mTOR signaling, autophagy, insulin signaling, APP metabolism, tau phosphorylation, oxidative stress, synaptic protein expression",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "mTOR, p70S6K, LC3B, Atg5, Atg7, APP, BACE1, Aβ oligomers, Tau (Ser416), GSK3β, DYRK1A, RCAN1, IRS1, PTEN, AMPK, STX1A, PSD95",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "CA1 field of hippocampus",
+      "CA3 field of hippocampus; brain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      29
+    ]
+  },
+  {
+    "group_id": "DST10|Urbano-Gámez et al. (2021)|Ts1Cje",
+    "treatment_identifier": "DST10",
+    "treatment": "Rapamycin",
+    "treatment_short": "Rapamycin",
+    "reference": "Urbano-Gámez et al. (2021)",
+    "doi": "https://doi.org/10.1186/s13041-021-00795-6",
+    "species": "Mouse",
+    "model_name": "Ts1Cje",
+    "model_short": "Ts1Cje",
+    "sex": "Males only",
+    "doses": [
+      "1 mg/kg"
+    ],
+    "routes": [
+      "single intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "E15-E17"
+    ],
+    "ages_at_testing": [
+      "P18-P30"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "mTOR signaling, mGluR-LTD, dendritic spine morphology, synaptic proteome",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "FMRP, LC3B, TOM20, PSD95, Synaptophysin, mTOR pathway-related proteins",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "CA1 field of hippocampus",
+      "CA3 field of hippocampus",
+      "brain"
+    ],
+    "celltypes": [
+      "hippocampal neuron"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      30
+    ]
+  },
+  {
+    "group_id": "DST11|Tramutola et al. (2023)|Ts2Cje",
+    "treatment_identifier": "DST11",
+    "treatment": "KYCCSRK peptide",
+    "treatment_short": "KYCCSRK",
+    "reference": "Tramutola et al. (2023)",
+    "doi": "https://doi.org/10.3390/antiox12010111",
+    "species": "Mouse",
+    "model_name": "Ts2Cje",
+    "model_short": "Ts2Cje",
+    "sex": "Males only",
+    "doses": [
+      "0.5 mM"
+    ],
+    "routes": [
+      "intranasal"
+    ],
+    "ages_at_treatment": [
+      "9M"
+    ],
+    "ages_at_testing": [
+      "9M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "Insulin signaling activation, oxidative stress response, mitochondrial function, amyloidogenic processing, synaptic plasticity",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "IR, IRS1, AKT, PTEN, BVRA, DYRK1A, BACE1, APP, TAU, OXPHOS complexes I–V, VDAC",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "Frontal cortex"
+    ],
+    "celltypes": [
+      "neuron",
+      "primary cultured cell"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      32
+    ]
+  },
+  {
+    "group_id": "DST12|Lanzillotta et al. (2020)|Ts2Cje",
+    "treatment_identifier": "DST12",
+    "treatment": "GSK2606414",
+    "treatment_short": "GSK2606414",
+    "reference": "Lanzillotta et al. (2020)",
+    "doi": "https://doi.org/10.1016/j.pneurobio.2020.101892",
+    "species": "Mouse",
+    "model_name": "Ts2Cje",
+    "model_short": "Ts2Cje",
+    "sex": "Males and Females",
+    "doses": [
+      "0.1 μg/μl"
+    ],
+    "routes": [
+      "intranasal"
+    ],
+    "ages_at_treatment": [
+      "5M"
+    ],
+    "ages_at_testing": [
+      "5M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "PERK–eIF2α signaling; global translation (SUnSET/puromycin); Nrf2/Bach1 antioxidant axis; oxidative/nitrosative stress (HNE, 3-NT)",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "PERK, p-eIF2α, ATF4, CHOP, Nrf2/p-Nrf2, Bach1, HO-1, NQO1, HNE-adducts, 3-NT",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "Frontal cortex"
+    ],
+    "celltypes": [
+      "neuron"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      33
+    ]
+  },
+  {
+    "group_id": "DST13|Ash et al. (2014)|Ts65Dn",
+    "treatment_identifier": "DST13",
+    "treatment": "Choline",
+    "treatment_short": "Choline",
+    "reference": "Ash et al. (2014)",
+    "doi": "https://doi.org/10.1016/j.nbd.2014.06.001",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "5 g/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E1-P21"
+    ],
+    "ages_at_testing": [
+      "13-17M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "L/M (Radial Arm Water Maze)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "basal forebrain"
+    ],
+    "celltypes": [
+      "VIP-ChAT interneuron"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      36
+    ]
+  },
+  {
+    "group_id": "DST13|Kelley et al. (2013)|Ts65Dn",
+    "treatment_identifier": "DST13",
+    "treatment": "Choline",
+    "treatment_short": "Choline",
+    "reference": "Kelley et al. (2013)",
+    "doi": "https://doi.org/10.1002/cne.23492",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5 g/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E1-P21"
+    ],
+    "ages_at_testing": [
+      "4-7.5M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "basal forebrain",
+      "dentate gyrus of hippocampal formation"
+    ],
+    "celltypes": [
+      "VIP-ChAT interneuron"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      37,
+      38
+    ]
+  },
+  {
+    "group_id": "DST13|Moon et al. (2010)|Ts65Dn",
+    "treatment_identifier": "DST13",
+    "treatment": "Choline",
+    "treatment_short": "Choline",
+    "reference": "Moon et al. (2010)",
+    "doi": "https://doi.org/10.1037/a0019590",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females, Not mentioned",
+    "doses": [
+      "25 mM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E1-P21"
+    ],
+    "ages_at_testing": [
+      "6M-12M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "visual attention tasks",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      34
+    ]
+  },
+  {
+    "group_id": "DST13|Powers et al. (2021)|Ts65Dn",
+    "treatment_identifier": "DST13",
+    "treatment": "Choline",
+    "treatment_short": "Choline",
+    "reference": "Powers et al. (2021)",
+    "doi": "https://doi.org/10.3389/fnagi.2021.723046",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "5 g/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E1-P21"
+    ],
+    "ages_at_testing": [
+      "12M",
+      "6M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Attention tasks",
+        "rating": "No effect"
+      },
+      {
+        "task": "Attention tasks",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      39,
+      40
+    ]
+  },
+  {
+    "group_id": "DST13|Velazquez et al. (2013)|Ts65Dn",
+    "treatment_identifier": "DST13",
+    "treatment": "Choline",
+    "treatment_short": "Choline",
+    "reference": "Velazquez et al. (2013)",
+    "doi": "https://doi.org/10.1016/j.nbd.2013.04.016",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5 g/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E1-P21"
+    ],
+    "ages_at_testing": [
+      "13M-17M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "L/M (Radial Arm Water Maze)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Dcx",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "dentate gyrus of hippocampal formation"
+    ],
+    "celltypes": [
+      "dentate gyrus granule cell"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      35
+    ]
+  },
+  {
+    "group_id": "DST14|Rueda et al. (2008)|Ts65Dn",
+    "treatment_identifier": "DST14",
+    "treatment": "Donepezil",
+    "treatment_short": "Donepezil",
+    "reference": "Rueda et al. (2008)",
+    "doi": "https://doi.org/10.1016/j.neulet.2007.12.039",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "3.3 mg/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "4M-6M"
+    ],
+    "ages_at_testing": [
+      "5M-6M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "spatial learning",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      41
+    ]
+  },
+  {
+    "group_id": "DST15|Rueda et al. (2008)|Ts65Dn",
+    "treatment_identifier": "DST15",
+    "treatment": "pentylenetetrazole",
+    "treatment_short": "PTZ",
+    "reference": "Rueda et al. (2008)",
+    "doi": "https://doi.org/10.1016/j.neulet.2007.12.039",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "3.0 mg/kg"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "4M-6M"
+    ],
+    "ages_at_testing": [
+      "5M-6M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "spatial learning",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      42
+    ]
+  },
+  {
+    "group_id": "DST16|Costa et al. (2007)|Ts65Dn",
+    "treatment_identifier": "DST16",
+    "treatment": "Memantine",
+    "treatment_short": "Memantine",
+    "reference": "Costa et al. (2007)",
+    "doi": "https://doi.org/10.1038/sj.npp.1301535",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "5 mg/kg",
+      "5mg/kg, 10mg/kg, 15mg/kg, 25 mg/kg",
+      "0.1, 0.2, 0.4, and 0.8 mg/kg"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "4M-6M, 10M-14M",
+      "4M-7M"
+    ],
+    "ages_at_testing": [
+      "4M-6M, 10M-14M",
+      "4M-7M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Fear conditioning test",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Locomotor activity",
+        "rating": "No effect"
+      },
+      {
+        "task": "Increased locomotor activity",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      43,
+      44,
+      45
+    ]
+  },
+  {
+    "group_id": "DST16|Lockrow et al. (2010)|Ts65Dn",
+    "treatment_identifier": "DST16",
+    "treatment": "Memantine",
+    "treatment_short": "Memantine",
+    "reference": "Lockrow et al. (2010)",
+    "doi": "https://doi.org/10.1016/j.bbr.2010.03.036",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "20 mg/kg/day",
+      "10 mg/kg"
+    ],
+    "routes": [
+      "diet",
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "4M-10M",
+      "8M-10M"
+    ],
+    "ages_at_testing": [
+      "8M-10M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Spontaneous activity",
+        "rating": "No effect"
+      },
+      {
+        "task": "Water radial arm maze",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Novel object recognition",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Calbindin D-28k-positive neurons",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "BDNF",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "medial septal nucleus",
+      "locus ceruleus",
+      "pyramidal layer of CA1; CA1 stratum oriens",
+      "CA1 field of hippocampus",
+      "frontal cortex; hippocampal formation"
+    ],
+    "celltypes": [
+      "cholinergic neuron",
+      "noradrenergic neuron",
+      "microglial cell"
+    ],
+    "n_experimental_rows": 9,
+    "source_row_indices": [
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ]
+  },
+  {
+    "group_id": "DST16|Rueda et al. (2010)|Ts65Dn",
+    "treatment_identifier": "DST16",
+    "treatment": "Memantine",
+    "treatment_short": "Memantine",
+    "reference": "Rueda et al. (2010)",
+    "doi": "https://doi.org/10.3233/JAD-2010-100240",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "9M-11M"
+    ],
+    "ages_at_testing": [
+      "10M-11M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze task",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Grip strength",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "APP",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "cerebral cortex",
+      "hippocampal formation",
+      "dentate gyrus granule cell layer",
+      "hippocampal VGLUT1"
+    ],
+    "celltypes": [
+      "dentate gyrus granule cell"
+    ],
+    "n_experimental_rows": 6,
+    "source_row_indices": [
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ]
+  },
+  {
+    "group_id": "DST17|Siddiqui et al. (2008)|Ts1Cje",
+    "treatment_identifier": "DST17",
+    "treatment": "MK-801",
+    "treatment_short": "MK-801",
+    "reference": "Siddiqui et al. (2008)",
+    "doi": "https://doi.org/10.1111/j.1601-183X.2008.00428.x",
+    "species": "Mouse",
+    "model_name": "Ts1Cje",
+    "model_short": "Ts1Cje",
+    "sex": "Males only",
+    "doses": [
+      "0.8 mg/kg"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "7M-8M"
+    ],
+    "ages_at_testing": [
+      "7M-8M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Nr1",
+        "rating": "Differential Rescue (Dose-dependent)"
+      },
+      {
+        "target": "DYRK1A",
+        "rating": "Differential Rescue (Dose-dependent)"
+      }
+    ],
+    "tissues": [
+      "cerebral cortex; hippocampal formation"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      61,
+      62
+    ]
+  },
+  {
+    "group_id": "DST17|Siddiqui et al. (2008)|Ts65Dn",
+    "treatment_identifier": "DST17",
+    "treatment": "MK-801",
+    "treatment_short": "MK-801",
+    "reference": "Siddiqui et al. (2008)",
+    "doi": "https://doi.org/10.1111/j.1601-183X.2008.00428.x",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "0.4 mg/kg"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "7M-8M"
+    ],
+    "ages_at_testing": [
+      "7M-8M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Nr1",
+        "rating": "Differential Rescue (Dose-dependent)"
+      }
+    ],
+    "tissues": [
+      "cerebral cortex"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      63,
+      64
+    ]
+  },
+  {
+    "group_id": "DST18|Hanson et al. (2013)|Ts65Dn",
+    "treatment_identifier": "DST18",
+    "treatment": "Ro25-6981",
+    "treatment_short": "Ro25-6981",
+    "reference": "Hanson et al. (2013)",
+    "doi": "https://doi.org/10.1038/npp.2013.19",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "50 mg/kg"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "2.5M - 3.5M"
+    ],
+    "ages_at_testing": [
+      "3M - 6M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Y-maze",
+        "rating": "No effect"
+      },
+      {
+        "task": "Barnes maze",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      65,
+      66,
+      67
+    ]
+  },
+  {
+    "group_id": "DST19|Giacomini et al. (2019)|Ts65Dn",
+    "treatment_identifier": "DST19",
+    "treatment": "7, 8-dihydroxyflavone",
+    "treatment_short": "7,8-DHF",
+    "reference": "Giacomini et al. (2019)",
+    "doi": "https://doi.org/10.3390/antiox8060163",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5 mg/kg"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15",
+      "4M-5M"
+    ],
+    "ages_at_testing": [
+      "P35-42",
+      "5M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [
+      "hippocampal granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      70,
+      71
+    ]
+  },
+  {
+    "group_id": "DST19|Parrini et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST19",
+    "treatment": "7, 8-dihydroxyflavone",
+    "treatment_short": "7,8-DHF",
+    "reference": "Parrini et al. (2017)",
+    "doi": "https://doi.org/10.1038/s41598-017-17201-8",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "22 mg/kg"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "16W-20W"
+    ],
+    "ages_at_testing": [
+      "16W-20W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Fear conditioning",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Novel object recognition",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "LTP",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [
+      "hippocampal CA1-3 neuron"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      72,
+      73
+    ]
+  },
+  {
+    "group_id": "DST19|Stagni et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST19",
+    "treatment": "7, 8-dihydroxyflavone",
+    "treatment_short": "7,8-DHF",
+    "reference": "Stagni et al. (2017)",
+    "doi": "https://doi.org/10.1016/j.expneurol.2017.08.018",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5 mg/kg"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15",
+      "P3, P45-50"
+    ],
+    "ages_at_testing": [
+      "P15",
+      "P45"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris Water Maze",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "hippocampal neurogenesis",
+        "rating": "Partial Rescue"
+      },
+      {
+        "function": "dendritic spine density",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "dentate gyrus"
+    ],
+    "celltypes": [
+      "neural progenitor cell",
+      "neural stem cell",
+      "hippocampal granule cell"
+    ],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      68,
+      69
+    ]
+  },
+  {
+    "group_id": "DST19|Valenti et al. (2021)|Ts65Dn",
+    "treatment_identifier": "DST19",
+    "treatment": "7, 8-dihydroxyflavone",
+    "treatment_short": "7,8-DHF",
+    "reference": "Valenti et al. (2021)",
+    "doi": "https://doi.org/10.3390/antiox11010062",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5 mg/kg/day"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P3-P15"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "Neonatal treatment with 7,8-DHF (P3–P15) corrects brain mitochondrial bioenergetic defects in Ts65Dn mice, reduces oxidative stress, restores PGC-1α expression, and represents a potential early mitoprotective and neurotrophic strategy for Down syndrome.",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Increased PGC1a, Increased ATP levels, Increased OXPHOS(complexes i-V)",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "All Brain",
+      "Hippocampus and Cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      125
+    ]
+  },
+  {
+    "group_id": "DST20|Fukuda et al. (2010)|Ts65Dn",
+    "treatment_identifier": "DST20",
+    "treatment": "Neurotropin",
+    "treatment_short": "Neurotropin",
+    "reference": "Fukuda et al. (2010)",
+    "doi": "https://doi.org/10.1016/j.mcn.2010.06.013",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "200 NU/kg/day"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "3M-7M"
+    ],
+    "ages_at_testing": [
+      "7M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "water radial-arm maze (WRAM)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Bdnf",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      83,
+      84
+    ]
+  },
+  {
+    "group_id": "DST21|Hawley et al. (2022)|Ts65Dn",
+    "treatment_identifier": "DST21",
+    "treatment": "CX-4945",
+    "treatment_short": "CX-4945",
+    "reference": "Hawley et al. (2022)",
+    "doi": "https://doi.org/10.1016/j.pbb.2022.173404",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "75 mg/kg/day"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P14-P18",
+      "P14-P19"
+    ],
+    "ages_at_testing": [
+      "P16-P17"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "locomotor hyperactivity resultant from failure to habituate",
+        "rating": "No effect"
+      },
+      {
+        "task": "home shaving preference test (anxiety-exploratory motivation balance)",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      105,
+      106
+    ]
+  },
+  {
+    "group_id": "DST21|Kim et al. (2016)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST21",
+    "treatment": "CX-4945",
+    "treatment_short": "CX-4945",
+    "reference": "Kim et al. (2016)",
+    "doi": "https://doi.org/10.1242/dmm.025668",
+    "species": "Fruit Fly",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Males and Females",
+    "doses": [
+      "1-25,000 nM",
+      "75 mg/kg"
+    ],
+    "routes": [
+      "diet",
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "2-weeks",
+      "8W-10W"
+    ],
+    "ages_at_testing": [
+      "newly hatched larvae",
+      "8W-10W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "shortening of lateral vein 5 (L5) in the adult wing",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Tau Thr212 phosphorylation",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "whole organism",
+      "Hippocampus"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      118,
+      121
+    ]
+  },
+  {
+    "group_id": "DST21|Kim et al. (2016)|UAS-Tau, UAS-mnb",
+    "treatment_identifier": "DST21",
+    "treatment": "CX-4945",
+    "treatment_short": "CX-4945",
+    "reference": "Kim et al. (2016)",
+    "doi": "https://doi.org/10.1242/dmm.025668",
+    "species": "Fruit Fly",
+    "model_name": "UAS-Tau, UAS-mnb",
+    "model_short": "UAS-Tau/mnb",
+    "sex": "Males only",
+    "doses": [
+      "100 nM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "hatching to adult"
+    ],
+    "ages_at_testing": [
+      "newly hatched larvae"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "eye size",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "whole organism"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      119
+    ]
+  },
+  {
+    "group_id": "DST21|Kim et al. (2016)|elav[C155]-gal4:: UAS-synGFP",
+    "treatment_identifier": "DST21",
+    "treatment": "CX-4945",
+    "treatment_short": "CX-4945",
+    "reference": "Kim et al. (2016)",
+    "doi": "https://doi.org/10.1242/dmm.025668",
+    "species": "Fruit Fly",
+    "model_name": "elav[C155]-gal4:: UAS-synGFP",
+    "model_short": "elav-Gal4>synGFP",
+    "sex": "Males and Females",
+    "doses": [
+      "100 nM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "Parent (7 days before mating)"
+    ],
+    "ages_at_testing": [
+      "Embryo"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "mortality",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "neurons"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      120
+    ]
+  },
+  {
+    "group_id": "DST21|LaCombe et al. (2024)|Ts65Dn",
+    "treatment_identifier": "DST21",
+    "treatment": "CX-4945",
+    "treatment_short": "CX-4945",
+    "reference": "LaCombe et al. (2024)",
+    "doi": "https://doi.org/10.1242/dmm.050914",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "75 mg/kg/day"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "P21-P29"
+    ],
+    "ages_at_testing": [
+      "P30"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "trabecular Bone mass density",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      89
+    ]
+  },
+  {
+    "group_id": "DST22|Zhu et al. (2022)|Tg(Tau, tAβ42, mnb)",
+    "treatment_identifier": "DST22",
+    "treatment": "DYR219",
+    "treatment_short": "DYR219",
+    "reference": "Zhu et al. (2022)",
+    "doi": "https://doi.org/10.1038/s41598-022-19967-y",
+    "species": "Fruit Fly",
+    "model_name": "Tg(Tau, tAβ42, mnb)",
+    "model_short": "Tau/Aβ42/mnb",
+    "sex": "Females only",
+    "doses": [
+      "304 μM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "hatching to adult"
+    ],
+    "ages_at_testing": [
+      "Adult"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "sleep reduction",
+        "rating": "Rescue"
+      },
+      {
+        "task": "1 hour memory (odour shock associative memory)",
+        "rating": "No effect"
+      },
+      {
+        "task": "climbing (motor function)",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "rough eye phenotype \"neuronal\"",
+        "rating": "Rescue"
+      },
+      {
+        "function": "life-span",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [
+      "neuron"
+    ],
+    "n_experimental_rows": 5,
+    "source_row_indices": [
+      90,
+      92,
+      94,
+      96,
+      98
+    ]
+  },
+  {
+    "group_id": "DST23|Zhu et al. (2022)|Tg(Tau, tAβ42, mnb)",
+    "treatment_identifier": "DST23",
+    "treatment": "DYR533",
+    "treatment_short": "DYR533",
+    "reference": "Zhu et al. (2022)",
+    "doi": "https://doi.org/10.1038/s41598-022-19967-y",
+    "species": "Fruit Fly",
+    "model_name": "Tg(Tau, tAβ42, mnb)",
+    "model_short": "Tau/Aβ42/mnb",
+    "sex": "Females only",
+    "doses": [
+      "248 μM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "hatching to adult"
+    ],
+    "ages_at_testing": [
+      "Adult"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "sleep reduction",
+        "rating": "No effect"
+      },
+      {
+        "task": "1 hour memory (odour shock associative memory)",
+        "rating": "No effect"
+      },
+      {
+        "task": "climbing (motor function)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "rough eye phenotype \"neuronal\"",
+        "rating": "No effect"
+      },
+      {
+        "function": "life-span",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [
+      "neuron"
+    ],
+    "n_experimental_rows": 5,
+    "source_row_indices": [
+      91,
+      93,
+      95,
+      97,
+      99
+    ]
+  },
+  {
+    "group_id": "DST24|Stensen et al. (2021)|Ts65Dn",
+    "treatment_identifier": "DST24",
+    "treatment": "PST-001",
+    "treatment_short": "PST-001",
+    "reference": "Stensen et al. (2021)",
+    "doi": "https://doi.org/10.3390/ph14111170",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "35 mg, 50 mg, and 100 mg PST-001/kg powdered food"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "10W-16W"
+    ],
+    "ages_at_testing": [
+      "10W-16W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "24 hour retention contextual fear conditioning",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      107
+    ]
+  },
+  {
+    "group_id": "DST24|Zhu, Parsons, Stensen, et al. (2022)|Tg(Tau, tAβ42, mnb)",
+    "treatment_identifier": "DST24",
+    "treatment": "PST-001",
+    "treatment_short": "PST-001",
+    "reference": "Zhu, Parsons, Stensen, et al. (2022)",
+    "doi": "https://doi.org/10.3389/fphar.2022.881385",
+    "species": "Fruit Fly",
+    "model_name": "Tg(Tau, tAβ42, mnb)",
+    "model_short": "Tau/Aβ42/mnb",
+    "sex": "Females only",
+    "doses": [
+      "334 μM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "hatching to adult"
+    ],
+    "ages_at_testing": [
+      "Adult"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "sleep reduction",
+        "rating": "Rescue"
+      },
+      {
+        "task": "1 hour memory (odour shock associative memory)",
+        "rating": "No effect"
+      },
+      {
+        "task": "climbing (motor function)",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "rough eye phenotype \"neuronal\"",
+        "rating": "Rescue"
+      },
+      {
+        "function": "life-span",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [
+      "neuron"
+    ],
+    "n_experimental_rows": 5,
+    "source_row_indices": [
+      100,
+      101,
+      102,
+      103,
+      104
+    ]
+  },
+  {
+    "group_id": "DST25|Choi et al. (2021)|Tg(Tau, mnb)",
+    "treatment_identifier": "DST25",
+    "treatment": "aristolactam BIII",
+    "treatment_short": "AL-BIII",
+    "reference": "Choi et al. (2021)",
+    "doi": "https://doi.org/10.1016/j.phymed.2021.153695",
+    "species": "Fruit Fly",
+    "model_name": "Tg(Tau, mnb)",
+    "model_short": "Tau/mnb",
+    "sex": "Males and Females",
+    "doses": [
+      "10 μM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "newly hatched larva"
+    ],
+    "ages_at_testing": [
+      "larva"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "shortening of lateral vein 5 (L5) in the adult wing",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "wing"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      108
+    ]
+  },
+  {
+    "group_id": "DST25|Choi et al. (2021)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST25",
+    "treatment": "aristolactam BIII",
+    "treatment_short": "AL-BIII",
+    "reference": "Choi et al. (2021)",
+    "doi": "https://doi.org/10.1016/j.phymed.2021.153695",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Not mentioned",
+    "doses": [
+      "10, 30 mg/kg"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "14W-15W"
+    ],
+    "ages_at_testing": [
+      "14W-15W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "open field distance travelled and time in centre",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Tau phosphorylation",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "brain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      109
+    ]
+  },
+  {
+    "group_id": "DST26|Buchberger et al. (2021)|Tg(ca8-E1b:FynmClover,HA-hDyrk1A)bz20",
+    "treatment_identifier": "DST26",
+    "treatment": "Leucettine L41",
+    "treatment_short": "L41",
+    "reference": "Buchberger et al. (2021)",
+    "doi": "https://doi.org/10.1016/j.jbc.2021.100853",
+    "species": "Zebrafish",
+    "model_name": "Tg(ca8-E1b:FynmClover,HA-hDyrk1A)bz20",
+    "model_short": "DYRK1A-OE bz20",
+    "sex": "Not mentioned",
+    "doses": [
+      "2 μM"
+    ],
+    "routes": [
+      "water environment"
+    ],
+    "ages_at_treatment": [
+      "3-7 dpf (days post fertilization)"
+    ],
+    "ages_at_testing": [
+      "2 and 4 dpt (days post treatment)"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "morphological Purkinje cell layer impairments",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      111
+    ]
+  },
+  {
+    "group_id": "DST26|Nguyen et al. (2018)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST26",
+    "treatment": "Leucettine L41",
+    "treatment_short": "L41",
+    "reference": "Nguyen et al. (2018)",
+    "doi": "https://doi.org/10.1242/dmm.035634",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Males only",
+    "doses": [
+      "20 mg/kg/day"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "9W-12W"
+    ],
+    "ages_at_testing": [
+      "12W-20W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "NOR 10 minute retention",
+        "rating": "Differential Rescue (Dose-dependent)"
+      },
+      {
+        "task": "Y-maze SA",
+        "rating": "No effect"
+      },
+      {
+        "task": "Object location",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "DYRK1A kinase activity (in vivo brain 19 days treatment)",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "DYRK1A abundance",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "Brain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      113,
+      114,
+      115
+    ]
+  },
+  {
+    "group_id": "DST26|Nguyen et al. (2018)|Ts65Dn",
+    "treatment_identifier": "DST26",
+    "treatment": "Leucettine L41",
+    "treatment_short": "L41",
+    "reference": "Nguyen et al. (2018)",
+    "doi": "https://doi.org/10.1242/dmm.035634",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "20 mg/kg/day"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "9W"
+    ],
+    "ages_at_testing": [
+      "12W-20W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "DYRK1A kinase activity (in vivo brain 19 days treatment)",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "DYRK1A abundance",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "Brain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      116
+    ]
+  },
+  {
+    "group_id": "DST26|Nguyen et al. (2018)|Dp1Yey",
+    "treatment_identifier": "DST26",
+    "treatment": "Leucettine L41",
+    "treatment_short": "L41",
+    "reference": "Nguyen et al. (2018)",
+    "doi": "https://doi.org/10.1242/dmm.035634",
+    "species": "Mouse",
+    "model_name": "Dp1Yey",
+    "model_short": "Dp1Yey",
+    "sex": "Males only",
+    "doses": [
+      "20 mg/kg/day"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "9W"
+    ],
+    "ages_at_testing": [
+      "12W-20W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "NOR 10 minute retention",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "brain functional connectivity (FC) patterns mapped via rsfMRI",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      117
+    ]
+  },
+  {
+    "group_id": "DST27|Buchberger et al. (2021)|Tg(ca8-E1b:FynmClover,HA-hDyrk1A)bz21",
+    "treatment_identifier": "DST27",
+    "treatment": "KuFal194",
+    "treatment_short": "KuFal194",
+    "reference": "Buchberger et al. (2021)",
+    "doi": "https://doi.org/10.1016/j.jbc.2021.100853",
+    "species": "Zebrafish",
+    "model_name": "Tg(ca8-E1b:FynmClover,HA-hDyrk1A)bz21",
+    "model_short": "DYRK1A-OE bz21",
+    "sex": "Not mentioned",
+    "doses": [
+      "10 μM"
+    ],
+    "routes": [
+      "water environment"
+    ],
+    "ages_at_treatment": [
+      "3-7 dpf (days post fertilization)"
+    ],
+    "ages_at_testing": [
+      "2 and 4 dpt (days post treatment)"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "morphological Purkinje cell layer impairments",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      112
+    ]
+  },
+  {
+    "group_id": "DST28|Buchberger et al. (2021)|Tg(ca8-E1b:FynmClover,HA-hDyrk1A)bz19",
+    "treatment_identifier": "DST28",
+    "treatment": "ProINDY",
+    "treatment_short": "ProINDY",
+    "reference": "Buchberger et al. (2021)",
+    "doi": "https://doi.org/10.1016/j.jbc.2021.100853",
+    "species": "Zebrafish",
+    "model_name": "Tg(ca8-E1b:FynmClover,HA-hDyrk1A)bz19",
+    "model_short": "DYRK1A-OE bz19",
+    "sex": "Not mentioned",
+    "doses": [
+      "2.5 μM"
+    ],
+    "routes": [
+      "water environment"
+    ],
+    "ages_at_treatment": [
+      "3-7 dpf (days post fertilization)"
+    ],
+    "ages_at_testing": [
+      "2 and 4 dpt (days post treatment)"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "morphological Purkinje cell layer impairments",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      110
+    ]
+  },
+  {
+    "group_id": "DST28|Ogawa et al. (2010)|Tg(xDyrk1a)",
+    "treatment_identifier": "DST28",
+    "treatment": "ProINDY",
+    "treatment_short": "ProINDY",
+    "reference": "Ogawa et al. (2010)",
+    "doi": "https://doi.org/10.1038/ncomms1090",
+    "species": "Zebrafish",
+    "model_name": "Tg(xDyrk1a)",
+    "model_short": "Tg(xDyrk1a)",
+    "sex": "Not mentioned",
+    "doses": [
+      "2.5 μM"
+    ],
+    "routes": [
+      "injection"
+    ],
+    "ages_at_treatment": [
+      "early embryo"
+    ],
+    "ages_at_testing": [
+      "tadpole"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "deformations of head, eye or dorsal",
+        "rating": "Differential Rescue (Dose-dependent)"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "whole body"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      122
+    ]
+  },
+  {
+    "group_id": "DST29|Blazek et al. (2015)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Blazek et al. (2015)",
+    "doi": "https://doi.org/10.1093/hmg/ddv284",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "9 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "3W-6W"
+    ],
+    "ages_at_testing": [
+      "6W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "structural constituent of bone",
+        "rating": "Rescue"
+      },
+      {
+        "function": "structural constituent of bone",
+        "rating": "No effect"
+      },
+      {
+        "function": "bone mineralization",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Dyrk1a",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "trabecular bone tissue; femur",
+      "compact bone tissue; diaphysis of femur",
+      "femur"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      153,
+      154,
+      155
+    ]
+  },
+  {
+    "group_id": "DST29|De La Torre et al. (2013)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "De La Torre et al. (2013)",
+    "doi": "https://doi.org/10.1002/mnfr.201300325",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Males only",
+    "doses": [
+      "2-3 mg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "1M"
+    ],
+    "ages_at_testing": [
+      "4M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze; Novel object recognition",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "protein serine/threonine kinase activity",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "layer of hippocampus",
+      "blood plasma"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      156,
+      158
+    ]
+  },
+  {
+    "group_id": "DST29|De La Torre et al. (2013)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "De La Torre et al. (2013)",
+    "doi": "https://doi.org/10.1002/mnfr.201300325",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "2-3 mg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "1M"
+    ],
+    "ages_at_testing": [
+      "4M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze; Novel object recognition",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "blood plasma"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      157
+    ]
+  },
+  {
+    "group_id": "DST29|Goodlett et al. (2020)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Goodlett et al. (2020)",
+    "doi": "https://doi.org/10.1038/s41598-020-67133-z",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "200 mg/kg/day"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "P42-P68"
+    ],
+    "ages_at_testing": [
+      "P49-P50",
+      "P51-P53",
+      "P56-P63",
+      "P68"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Multivariate concentric square field (MCSF)",
+        "rating": "No effect"
+      },
+      {
+        "task": "Balance beam",
+        "rating": "No effect"
+      },
+      {
+        "task": "Morris water maze (MWM)",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "structural constituent of bone; protein serine/threonine kinase activity",
+        "rating": "No effect"
+      },
+      {
+        "function": "protein serine/threonine kinase activity",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Dyrk1a",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "trabecular bone tissue; compact bone tissue; femur",
+      "layer of hippocampus; cerebellum; cerebral cortex"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 5,
+    "source_row_indices": [
+      161,
+      162,
+      163,
+      164,
+      165
+    ]
+  },
+  {
+    "group_id": "DST29|Jamal et al. (2022)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Jamal et al. (2022)",
+    "doi": "https://doi.org/10.1371/journal.pone.0264254",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "20 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "P24-P68"
+    ],
+    "ages_at_testing": [
+      "P68"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "structural constituent of bone",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "trabecular bone tissue; compact bone tissue; femur"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      168
+    ]
+  },
+  {
+    "group_id": "DST29|McElyea et al. (2016)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "McElyea et al. (2016)",
+    "doi": "https://doi.org/10.1093/hmg/ddw309",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "200 mg/kg",
+      "12 mg/kg/day"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "E7-E8",
+      "E0-E9"
+    ],
+    "ages_at_testing": [
+      "E9.5",
+      "6W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "cell volume homeostasis; homeostasis of number of cells within a tissue",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Dyrk1a; Rcan1; Shh; Gli1; Ptch1; Ets2",
+        "rating": "Partial Rescue"
+      },
+      {
+        "target": "Dyrk1a",
+        "rating": "Partial Rescue"
+      },
+      {
+        "target": "Dyrk1a",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "pharyngeal arch 1",
+      "obsolete craniofacial skeleton",
+      "lumen of nasopharynx"
+    ],
+    "celltypes": [
+      "migratory cranial neural crest cell"
+    ],
+    "n_experimental_rows": 4,
+    "source_row_indices": [
+      127,
+      128,
+      129,
+      130
+    ]
+  },
+  {
+    "group_id": "DST29|Ortega et al. (2022)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Ortega et al. (2022)",
+    "doi": "https://doi.org/10.3389/fnmol.2022.1015220",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Not mentioned",
+    "doses": [
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "1M-2M"
+    ],
+    "ages_at_testing": [
+      "2M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Proteomic enrichment/depletion",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "regulation of mitochondrial DNA replication; DNA synthesis involved in mitochondrial DNA replication",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      190
+    ]
+  },
+  {
+    "group_id": "DST29|Ramakrishna et al. (2014)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Ramakrishna et al. (2014)",
+    "doi": "https://doi.org/10.1007/s12035-014-8979-z",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "0.2 uM"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "6W-20W"
+    ],
+    "ages_at_testing": [
+      "6W-20W"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "methyl-CpG binding",
+        "rating": "Rescue"
+      },
+      {
+        "function": "methyl-CpG binding",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Snca",
+        "rating": "Partial Rescue"
+      },
+      {
+        "target": "Snca",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Klk6",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "brain",
+      "cerebral cortex"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      169,
+      170,
+      171
+    ]
+  },
+  {
+    "group_id": "DST29|Souchet et al. (2019)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Souchet et al. (2019)",
+    "doi": "https://doi.org/10.1038/s41598-019-40328-9",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Not mentioned",
+    "doses": [
+      "50 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E0-P21",
+      "E0-P90",
+      "P60-P90"
+    ],
+    "ages_at_testing": [
+      "P21",
+      "P90"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "detection of cell density",
+        "rating": "Rescue"
+      },
+      {
+        "function": "detection of cell density",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Gad1; Gad2; Slc32a1; Dlg4; Gria2; Grin2a; Slc17a7",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Gad1; Gad2; Slc32a1; Dlg4; Gria2; Grin2a; Slc17a7",
+        "rating": "Partial Rescue"
+      },
+      {
+        "target": "Gad1; Gad2; Slc32a1; Dlg4; Gria2; Grin2a; Slc17a8",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "obsolete regional part of hippocampus proper; hippocampus stratum radiatum; cerebral cortex"
+    ],
+    "celltypes": [
+      "GABAergic interneuron",
+      "hippocampal interneuron"
+    ],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      133,
+      134,
+      135
+    ]
+  },
+  {
+    "group_id": "DST29|Souchet et al. (2019)|Dp(16)1Yey",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Souchet et al. (2019)",
+    "doi": "https://doi.org/10.1038/s41598-019-40328-9",
+    "species": "Mouse",
+    "model_name": "Dp(16)1Yey",
+    "model_short": "Dp16",
+    "sex": "Not mentioned",
+    "doses": [
+      "50 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E0-P21",
+      "E0-P90"
+    ],
+    "ages_at_testing": [
+      "P21",
+      "P90"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Novel object recognition memory",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Y Maze Spontaneous Alternation; Hyperactivity",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "detection of cell density",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Gad1; Gad2; Slc32a1; Gria2; Grin2a; Slc17a9; Grin1",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Gad1; Gad2; Slc32a1; Gria2; Grin2a; Slc17a10; Grin1",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "obsolete regional part of hippocampus proper; hippocampus stratum radiatum; cerebral cortex"
+    ],
+    "celltypes": [
+      "GABAergic interneuron",
+      "hippocampal interneuron"
+    ],
+    "n_experimental_rows": 4,
+    "source_row_indices": [
+      136,
+      137,
+      138,
+      139
+    ]
+  },
+  {
+    "group_id": "DST29|Stagni et al. (2016)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Stagni et al. (2016)",
+    "doi": "https://doi.org/10.1016/j.neuroscience.2016.07.031",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "25 mg/kg"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P15",
+      "P45-P50",
+      "P15 & P45-P50"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze (MWM); Y-maze",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "cell population proliferation; detection of cell density; maintenance of cell number",
+        "rating": "Rescue"
+      },
+      {
+        "function": "homeostasis of number of cells within a tissue; maintenance of cell number",
+        "rating": "No effect"
+      },
+      {
+        "function": "cell volume homeostasis; detection of cell density; maintenance of cell number",
+        "rating": "Rescue"
+      },
+      {
+        "function": "postsynapse; presynapse",
+        "rating": "Rescue"
+      },
+      {
+        "function": "cell volume homeostasis; detection of cell density; maintenance of cell number",
+        "rating": "No effect"
+      },
+      {
+        "function": "postsynapse; presynapse",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Gsk3b",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "dentate gyrus of hippocampal formation; cerebral cortex subventricular zone",
+      "dentate gyrus granule cell layer",
+      "primary somatosensory area barrel field layer 2/3; primary somatosensory area barrel field layer 4; primary somatosensory area barrel field layer 5; primary somatosensory cortex layer 6; dentate gyrus molecular layer; CA3 stratum lucidum; CA1 stratum radiatum",
+      "dentate gyrus subgranular zone; dentate gyrus granule cell layer",
+      "layer of hippocampus"
+    ],
+    "celltypes": [
+      "neural progenitor cell",
+      "apoptosis fated cell",
+      "granule cell",
+      "somatosensory neuron",
+      "molecular layer interneuron",
+      "pyramidal neuron",
+      "dentate gyrus neuron",
+      "hippocampal astrocyte",
+      "hippocampal neuron"
+    ],
+    "n_experimental_rows": 7,
+    "source_row_indices": [
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146
+    ]
+  },
+  {
+    "group_id": "DST29|Stringer et al. (2015)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Stringer et al. (2015)",
+    "doi": "https://doi.org/10.1016/j.pbb.2015.09.002",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "15.4-18.1 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "P24-P45",
+      "P24-P70"
+    ],
+    "ages_at_testing": [],
+    "behavioral_outcomes": [
+      {
+        "task": "Locomotor activity (LMA); Novel object recognition (NOR); T-maze delayed non-matching to place (DNMP); Morris water maze place learning task (MWM)",
+        "rating": "No effect"
+      },
+      {
+        "task": "Novel object recognition (NOR); Morris water maze place learning task (MWM); Balance beam task",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "protein serine/threonine kinase activity",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [],
+    "tissues": [
+      "layer of hippocampus; cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      159,
+      160
+    ]
+  },
+  {
+    "group_id": "DST29|Stringer et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Stringer et al. (2017)",
+    "doi": "https://doi.org/10.1016/j.physbeh.2017.05.003",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "48.7-52.9 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "P24-P68"
+    ],
+    "ages_at_testing": [
+      "P45-P46",
+      "P47-P49; P65-P67",
+      "P52-P54",
+      "P57-P64",
+      "P68"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Multivariate concentric square field (MCSF)",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Novel Object Recognition (NOR)",
+        "rating": "No effect"
+      },
+      {
+        "task": "Balance beam task",
+        "rating": "No effect"
+      },
+      {
+        "task": "Morris water maze place learning task (MWM)",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "structural constituent of bone; protein serine/threonine kinase activity",
+        "rating": "No effect"
+      },
+      {
+        "function": "protein serine/threonine kinase activity",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Dyrk1a",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "trabecular bone tissue; compact bone tissue; femur",
+      "layer of hippocampus; cerebral cortex; cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 6,
+    "source_row_indices": [
+      147,
+      148,
+      149,
+      150,
+      151,
+      152
+    ]
+  },
+  {
+    "group_id": "DST29|Yin et al. (2017)|Sprague-Dawley",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Yin et al. (2017)",
+    "doi": "https://doi.org/10.1038/s41598-017-00682-y",
+    "species": "Rat",
+    "model_name": "Sprague-Dawley",
+    "model_short": "SD rats",
+    "sex": "Not mentioned",
+    "doses": [
+      "1mM"
+    ],
+    "routes": [
+      "intracerebroventricular injection"
+    ],
+    "ages_at_treatment": [
+      "P10"
+    ],
+    "ages_at_testing": [
+      "P12"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "brain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      131
+    ]
+  },
+  {
+    "group_id": "DST29|Yin et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST29",
+    "treatment": "Epigallocatechin-3-gallate (EGCG)",
+    "treatment_short": "EGCG",
+    "reference": "Yin et al. (2017)",
+    "doi": "https://doi.org/10.1038/s41598-017-00682-y",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "3 mg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E0-5M"
+    ],
+    "ages_at_testing": [
+      "5M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Elevated plus-maze; Open-field activity test; Spatial learnng and memory task in the water-maze",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Dyrk1a; Mapt",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "forebrain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      132
+    ]
+  },
+  {
+    "group_id": "DST30|Delabar et al. (2024)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST30",
+    "treatment": "Epigallocatechin-3-gallate analogue 7cc (7cc)",
+    "treatment_short": "7cc",
+    "reference": "Delabar et al. (2024)",
+    "doi": "https://doi.org/10.1016/j.ejmech.2023.116098",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Not mentioned",
+    "doses": [],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [],
+    "ages_at_testing": [],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "protein serine/threonine kinase activity",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Mapk1; Mapk3",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "brain"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      166
+    ]
+  },
+  {
+    "group_id": "DST30|Delabar et al. (2024)|Dp1Yey",
+    "treatment_identifier": "DST30",
+    "treatment": "Epigallocatechin-3-gallate analogue 7cc (7cc)",
+    "treatment_short": "7cc",
+    "reference": "Delabar et al. (2024)",
+    "doi": "https://doi.org/10.1016/j.ejmech.2023.116098",
+    "species": "Mouse",
+    "model_name": "Dp1Yey",
+    "model_short": "Dp1Yey",
+    "sex": "Not mentioned",
+    "doses": [
+      "40 mg/kg/day"
+    ],
+    "routes": [
+      "oral"
+    ],
+    "ages_at_treatment": [
+      "E10-2months"
+    ],
+    "ages_at_testing": [
+      "2M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Y-maze",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      167
+    ]
+  },
+  {
+    "group_id": "DST31|Souchet et al. (2015)|Tg(Dyrk1a)",
+    "treatment_identifier": "DST31",
+    "treatment": "Polyphenon 60 (EGCG - POL60)",
+    "treatment_short": "POL60",
+    "reference": "Souchet et al. (2015)",
+    "doi": "https://doi.org/10.3389/fnbeh.2015.00267",
+    "species": "Mouse",
+    "model_name": "Tg(Dyrk1a)",
+    "model_short": "Tg(Dyrk1a)",
+    "sex": "Males only",
+    "doses": [
+      "60 mg/kg/day",
+      "10, 60, 360 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "3M-4M"
+    ],
+    "ages_at_testing": [
+      "3M-4M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Y maze",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Gria1; Grin1; Grin2a; Gad1",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Slc17a7",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Gria1; Grin1; Grin2a; Gad1;Slc17a7",
+        "rating": "No effect"
+      },
+      {
+        "target": "Gria1; Grin1; Grin2a; Gad1;Slc17a7",
+        "rating": "Differential Rescue (Dose-dependent)"
+      }
+    ],
+    "tissues": [
+      "CA1 field of hippocampus; CA2 field of hippocampus; CA3 field of hippocampus; CA4 field of hippocampus; cerebral cortex",
+      "cerebral cortex",
+      "cerebellum",
+      "CA1 field of hippocampus; CA2 field of hippocampus; CA3 field of hippocampus; CA4 field of hippocampus; cerebral cortex; cerebellum"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 5,
+    "source_row_indices": [
+      174,
+      175,
+      176,
+      178,
+      179
+    ]
+  },
+  {
+    "group_id": "DST31|Souchet et al. (2015)|Ts65Dn",
+    "treatment_identifier": "DST31",
+    "treatment": "Polyphenon 60 (EGCG - POL60)",
+    "treatment_short": "POL60",
+    "reference": "Souchet et al. (2015)",
+    "doi": "https://doi.org/10.3389/fnbeh.2015.00267",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "60 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "3M-4M"
+    ],
+    "ages_at_testing": [
+      "3M-4M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Y maze",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Gria1; Grin1; Grin2a; Gad1;Slc17a7",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      177
+    ]
+  },
+  {
+    "group_id": "DST32|Llambrich et al. (2022)|Ts65Dn",
+    "treatment_identifier": "DST32",
+    "treatment": "Green Tea Extract (EGCG - GTE)",
+    "treatment_short": "GTE",
+    "reference": "Llambrich et al. (2022)",
+    "doi": "https://doi.org/10.3389/fmed.2022.815739",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "100 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E9-P29"
+    ],
+    "ages_at_testing": [
+      "P3, P14, P29",
+      "P1-P15"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "brain morphology; brain volume",
+        "rating": "No effect"
+      },
+      {
+        "task": "brain ventricle volume, brain ventricle shape",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Craniofacial morphology",
+        "rating": "No effect"
+      },
+      {
+        "task": "tactile startle response; vibrissae placing; tactile orientation; opening of the eyes; detachment of the pinna; incisor eruption",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "brain",
+      "ventricular system of brain",
+      "obsolete craniofacial skeleton"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 4,
+    "source_row_indices": [
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  {
+    "group_id": "DST32|Llambrich et al. (2023)|Ts65Dn",
+    "treatment_identifier": "DST32",
+    "treatment": "Green Tea Extract (EGCG - GTE)",
+    "treatment_short": "GTE",
+    "reference": "Llambrich et al. (2023)",
+    "doi": "https://doi.org/10.7554/elife.89763",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E9-5M"
+    ],
+    "ages_at_testing": [
+      "P0-P17, 5M, 6M, 8M",
+      "P3, P29, 5M, 6M, 8M",
+      "5M, 6M, 8M",
+      "P1-P18",
+      "4M, 5M, 6M, 7M",
+      "8M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Body weight",
+        "rating": "No effect"
+      },
+      {
+        "task": "Craniofacial shape; Long bone BMD; Long bone microarchitecture",
+        "rating": "No effect"
+      },
+      {
+        "task": "Whole brain volume; Hippocampal volume; Brain ventricular volume",
+        "rating": "No effect"
+      },
+      {
+        "task": "Eye opening; Pinna detachment; Walking; Cliff drop aversion; Preyer reflex; Blast response; Visual placing; Reaching response; Vibrissae placing; Tactile response",
+        "rating": "No effect"
+      },
+      {
+        "task": "Open Field; Elevated Plus Maze; Sociability/Preference for Social Novelty; Novel Object Recognition;Passive Avoidance",
+        "rating": "No effect"
+      },
+      {
+        "task": "Gene expression modulation",
+        "rating": "No effect"
+      },
+      {
+        "task": "Hippocampal metabolite levels",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "obsolete craniofacial skeleton",
+      "brain; cerebellum; brain ventricle; CA1 field of hippocampus; CA2 field of hippocampus; CA3 field of hippocampus; CA4 field of hippocampus",
+      "cerebellum",
+      "CA1 field of hippocampus; CA2 field of hippocampus; CA3 field of hippocampus; CA4 field of hippocampus"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 7,
+    "source_row_indices": [
+      191,
+      192,
+      193,
+      194,
+      196,
+      197,
+      198
+    ]
+  },
+  {
+    "group_id": "DST32|Llambrich et al. (2023)|Ts65Dn Mothers",
+    "treatment_identifier": "DST32",
+    "treatment": "Green Tea Extract (EGCG - GTE)",
+    "treatment_short": "GTE",
+    "reference": "Llambrich et al. (2023)",
+    "doi": "https://doi.org/10.7554/elife.89763",
+    "species": "Mouse",
+    "model_name": "Ts65Dn Mothers",
+    "model_short": "Ts65Dn (dams)",
+    "sex": "Not mentioned",
+    "doses": [
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E9-5M"
+    ],
+    "ages_at_testing": [
+      "P8/P9"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Maternal care",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      195
+    ]
+  },
+  {
+    "group_id": "DST32|Llambrich, González-Colom, et al. (2022)|Ts65Dn",
+    "treatment_identifier": "DST32",
+    "treatment": "Green Tea Extract (EGCG - GTE)",
+    "treatment_short": "GTE",
+    "reference": "Llambrich, González-Colom, et al. (2022)",
+    "doi": "https://doi.org/10.3390/nu14194167",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "100 mg/kg/day",
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E9-P29"
+    ],
+    "ages_at_testing": [
+      "P3",
+      "P14",
+      "P29"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Facial shape; Skull shape; Mandibular shape; humerous, scapula, premaxilla alterations",
+        "rating": "No effect"
+      },
+      {
+        "task": "Facial shape; Skull shape; Mandibular shape; humerous, scapula, premaxilla alterations",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "obsolete craniofacial skeleton"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 6,
+    "source_row_indices": [
+      184,
+      185,
+      186,
+      187,
+      188,
+      189
+    ]
+  },
+  {
+    "group_id": "DST32|Starbuck et al. (2021)|Ts65Dn",
+    "treatment_identifier": "DST32",
+    "treatment": "Green Tea Extract (EGCG - GTE)",
+    "treatment_short": "GTE",
+    "reference": "Starbuck et al. (2021)",
+    "doi": "https://doi.org/10.1038/s41598-021-83757-1",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Not mentioned",
+    "doses": [
+      "100 mg/kg/day",
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E9-P29"
+    ],
+    "ages_at_testing": [
+      "P29"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Craniofacial morphology",
+        "rating": "No effect"
+      },
+      {
+        "task": "Craniofacial morphology",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [
+      "obsolete craniofacial skeleton"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 2,
+    "source_row_indices": [
+      172,
+      173
+    ]
+  },
+  {
+    "group_id": "DST33|Catuara-Solarz et al. (2016)|Ts65Dn",
+    "treatment_identifier": "DST33",
+    "treatment": "Environmental Enrichment + Green Tea Extract (EE + EGCG - GTE)",
+    "treatment_short": "EE + GTE",
+    "reference": "Catuara-Solarz et al. (2016)",
+    "doi": "https://doi.org/10.1523/eneuro.0103-16.2016",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Females only",
+    "doses": [
+      "30 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "1M-2M"
+    ],
+    "ages_at_testing": [
+      "2M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze(MWM); Novel object recognition test (NOR)",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Swimming speed",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Slc32a1",
+        "rating": "Partial Rescue"
+      },
+      {
+        "target": "Slc32a1",
+        "rating": "No effect"
+      },
+      {
+        "target": "Slc17a7",
+        "rating": "No effect"
+      },
+      {
+        "target": "Slc17a7",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "CA1 field of hippocampus; dentate gyrus of hippocampal formation",
+      "CA1 field of hippocampus",
+      "dentate gyrus of hippocampal formation"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 6,
+    "source_row_indices": [
+      199,
+      200,
+      201,
+      202,
+      203,
+      204
+    ]
+  },
+  {
+    "group_id": "DST34|Corrales et al. (2012)|Ts65Dn",
+    "treatment_identifier": "DST34",
+    "treatment": "Melatonin",
+    "treatment_short": "Melatonin",
+    "reference": "Corrales et al. (2012)",
+    "doi": "https://doi.org/10.1111/jpi.12037",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "0.5 mg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "5M-12M"
+    ],
+    "ages_at_testing": [
+      "10M-12M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze, Motor coordination: rotarod, Plus maze, Open ﬁeld, Exploratory activity: hole board test, Sensorimotor test battery, Spontaneous activity: actimetry.",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Prevents cholinergic degeneration, Reduces some signs of anxiety in Ts65Dn mice, does not significantly affect brain levels of APP and β-amyloid.",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Choline Acetyltransferase (ChAT), Amyloid Precursor Protein (APP), β-Amyloid peptides (Aβ₄₀ e Aβ₄₂), Oxidative stress pathway, Melatoninergic signaling",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "Hippocampus and Cortex"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      123
+    ]
+  },
+  {
+    "group_id": "DST34|Corrales et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST34",
+    "treatment": "Melatonin",
+    "treatment_short": "Melatonin",
+    "reference": "Corrales et al. (2017)",
+    "doi": "https://doi.org/10.1016/j.bbr.2017.07.022",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "0.5 mg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E0-22W"
+    ],
+    "ages_at_testing": [
+      "4.5M, 5M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Sensorimotor test, actimetry, rotarod, hole board, open field, elevated plus maze, Morris water maze and Contextual Fear Conditioning test.",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "No positive effects on cognitive tests together with neurogenesis. Modulation of antioxidant enzymes: SOD1 in the cortex, and catalase in the hippocampus. No effect on lipid and protein oxidative damage",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "SOD1, Catalase, Glutathione Peroxidase, Glutathione Reductase, Glutathione S-Transferase, Protein Carbonyls",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "Hippocampus and Cortex"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      124
+    ]
+  },
+  {
+    "group_id": "DST35|Day et al. (2019)|Ts65Dn",
+    "treatment_identifier": "DST35",
+    "treatment": "Glucagon-like peptide 1",
+    "treatment_short": "GLP-1",
+    "reference": "Day et al. (2019)",
+    "doi": "https://doi.org/10.1523/ENEURO.0031-19.2019",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "500 ng/g/day"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "8M-9M"
+    ],
+    "ages_at_testing": [
+      "9M"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Object location memory task; Passive avoidance task",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "Reduces mitochondrial oxidative stress, Improves dendritic spine morphology, Restores synaptic plasticity and memory in Ts65Dn mice, Restores synaptic plasticity and memory in Ts65Dn mice without affecting glucose metabolism.",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "OXPHOS",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "Hippocampus"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      126
+    ]
+  },
+  {
+    "group_id": "DST36|Kazim et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST36",
+    "treatment": "Peptide 021 (P021)",
+    "treatment_short": "P021",
+    "reference": "Kazim et al. (2017)",
+    "doi": "https://doi.org/10.1038/srep45561",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "200 nM/g food",
+      "201 nM/g food",
+      "202 nM/g food",
+      "203 nM/g food",
+      "204 nM/g food",
+      "205 nM/g food",
+      "206 nM/g food",
+      "207 nM/g food",
+      "208 nM/g food"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "E8 through pregnant dam until PND21"
+    ],
+    "ages_at_testing": [
+      "PND1-PND21"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "surface righting",
+        "rating": "Rescue"
+      },
+      {
+        "task": "negative geotaxis",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "cliff aversion",
+        "rating": "Rescue"
+      },
+      {
+        "task": "rooting",
+        "rating": "No effect"
+      },
+      {
+        "task": "forelimb grasp",
+        "rating": "No effect"
+      },
+      {
+        "task": "air righting",
+        "rating": "No effect"
+      },
+      {
+        "task": "eye opening",
+        "rating": "No effect"
+      },
+      {
+        "task": "ear twitch",
+        "rating": "Rescue"
+      },
+      {
+        "task": "auditory startle",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [],
+    "tissues": [],
+    "celltypes": [],
+    "n_experimental_rows": 9,
+    "source_row_indices": [
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82
+    ]
+  },
+  {
+    "group_id": "DST37|Yu et al. (2019)|Ts65Dn",
+    "treatment_identifier": "DST37",
+    "treatment": "Luteolin",
+    "treatment_short": "Luteolin",
+    "reference": "Yu et al. (2019)",
+    "doi": "https://doi.org/10.4103/1673-5374.248519",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "10 mg/kg"
+    ],
+    "routes": [
+      "intraperitoneal injection"
+    ],
+    "ages_at_treatment": [
+      "12W-16W"
+    ],
+    "ages_at_testing": [
+      "16W"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Morris water maze",
+        "rating": "Partial Rescue"
+      },
+      {
+        "task": "Novel object recognition",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "cellular_outcomes": [],
+    "molecular_outcomes": [
+      {
+        "target": "Bdnf",
+        "rating": "Partial Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus"
+    ],
+    "celltypes": [
+      "neural progenitor cell",
+      "neural stem cell"
+    ],
+    "n_experimental_rows": 4,
+    "source_row_indices": [
+      85,
+      86,
+      87,
+      88
+    ]
+  },
+  {
+    "group_id": "DST38|Begenisic et al. (2014)|Ts65Dn",
+    "treatment_identifier": "DST38",
+    "treatment": "Fluoxetine",
+    "treatment_short": "Fluoxetine",
+    "reference": "Begenisic et al. (2014)",
+    "doi": "https://doi.org/10.1016/j.nbd.2013.11.010",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "40 mg/kg/day",
+      "20 mg/kg/day",
+      "10 mg/kg/day"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "2M-4M"
+    ],
+    "ages_at_testing": [
+      "Not mentioned"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Evaluation of Pro-Convulsive Side Effects",
+        "rating": "No effect"
+      },
+      {
+        "task": "Evaluation of Pro-Convulsive Side Effects",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Novel Place Recognition (NPR) Task",
+        "rating": "Rescue"
+      },
+      {
+        "task": "Y-Maze Spontaneous Alternation for Working Memory",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "regulation of long-term neuronal synaptic plasticity",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Gabarap",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus molecular layer; hippocampus granule cell layer",
+      "CA1 field of hippocampus"
+    ],
+    "celltypes": [],
+    "n_experimental_rows": 7,
+    "source_row_indices": [
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
+    ]
+  },
+  {
+    "group_id": "DST38|Bianchi et al. (2010)|Ts65Dn",
+    "treatment_identifier": "DST38",
+    "treatment": "Fluoxetine",
+    "treatment_short": "Fluoxetine",
+    "reference": "Bianchi et al. (2010)",
+    "doi": "https://doi.org/10.1523/jneurosci.0534-10.2010",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5-10 mg/kg"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P15",
+      "P45",
+      "P15, P45",
+      "P43, P44"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Contextual and Cued-Fear Conditioning",
+        "rating": "Rescue"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "cell population proliferation",
+        "rating": "Rescue"
+      },
+      {
+        "function": "forebrain generation of neurons",
+        "rating": "Rescue"
+      },
+      {
+        "function": "regulation of forebrain neuron differentiation",
+        "rating": "Rescue"
+      },
+      {
+        "function": "forebrain development",
+        "rating": "Rescue"
+      },
+      {
+        "function": "neuron-neuron synaptic transmission",
+        "rating": "Rescue"
+      },
+      {
+        "function": "neuron-neuron synaptic transmission",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Htr1a",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Bdnf",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Ngf",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "dentate gyrus subgranular zone; postnatal subventricular zone; neocortex; striatum",
+      "dentate gyrus of hippocampal formation",
+      "dentate gyrus of hippocampal formation; postnatal subventricular zone"
+    ],
+    "celltypes": [
+      "precursor cell",
+      "dentate gyrus granule cell",
+      "hippocampal astrocyte",
+      "hippocampal neuron"
+    ],
+    "n_experimental_rows": 9,
+    "source_row_indices": [
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231
+    ]
+  },
+  {
+    "group_id": "DST38|Guidi et al. (2013)|Ts65Dn",
+    "treatment_identifier": "DST38",
+    "treatment": "Fluoxetine",
+    "treatment_short": "Fluoxetine",
+    "reference": "Guidi et al. (2013)",
+    "doi": "https://doi.org/10.1111/j.1750-3639.2012.00624.x",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "5-10 mg/kg"
+    ],
+    "routes": [
+      "subcutaneous injection"
+    ],
+    "ages_at_treatment": [
+      "P3-P15"
+    ],
+    "ages_at_testing": [
+      "P45"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "dendrite development; regulation of dendrite morphogenesis; regulation of dendritic spine development; dendrite morphogenesis",
+        "rating": "Rescue"
+      },
+      {
+        "function": "dendrite development; dendrite; dendrite morphogenesis; regulation of dendrite morphogenesis; dendritic spine development; dendritic spine organization",
+        "rating": "Rescue"
+      },
+      {
+        "function": "dendritic spine development; dendritic spine morphogenesis; dendritic spine organization; regulation of dendritic spine development",
+        "rating": "Rescue"
+      },
+      {
+        "function": "synapse organization; synaptic vesicle; presynaptic active zone",
+        "rating": "Rescue"
+      },
+      {
+        "function": "synapse organization; regulation of synapse structure or activity; synaptic transmission, glutamatergic; presynaptic active zone",
+        "rating": "Rescue"
+      },
+      {
+        "function": "serotonin receptor activity; G protein-coupled serotonin receptor signaling pathway; serotonin receptor signaling pathway; chemical synaptic transmission",
+        "rating": "No effect"
+      },
+      {
+        "function": "regulation of neuron projection development",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Syp",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Syp; Slc17a7",
+        "rating": "Rescue"
+      },
+      {
+        "target": "Htr1a",
+        "rating": "No effect"
+      },
+      {
+        "target": "Dscam",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "dentate gyrus granule cell layer",
+      "dentate gyrus granule cell layer; dentate gyrus subgranular zone",
+      "dentate gyrus of hippocampal formation; layer of dentate gyrus",
+      "dentate gyrus molecular layer; layer of dentate gyrus",
+      "hippocampal formation",
+      "hippocampal formation; dentate gyrus granule cell layer"
+    ],
+    "celltypes": [
+      "dentate gyrus granule cell",
+      "neuron"
+    ],
+    "n_experimental_rows": 7,
+    "source_row_indices": [
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222
+    ]
+  },
+  {
+    "group_id": "DST38|Heinen et al. (2012)|Ts65Dn",
+    "treatment_identifier": "DST38",
+    "treatment": "Fluoxetine",
+    "treatment_short": "Fluoxetine",
+    "reference": "Heinen et al. (2012)",
+    "doi": "https://doi.org/10.1155/2012/467251",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males and Females",
+    "doses": [
+      "0.2 mg/mL"
+    ],
+    "routes": [
+      "diet"
+    ],
+    "ages_at_treatment": [
+      "18W"
+    ],
+    "ages_at_testing": [
+      "P149-P227"
+    ],
+    "behavioral_outcomes": [
+      {
+        "task": "Open Field Assay",
+        "rating": "No effect"
+      },
+      {
+        "task": "Morris Water Maze",
+        "rating": "No effect"
+      }
+    ],
+    "cellular_outcomes": [
+      {
+        "function": "choline O-acetyltransferase activity",
+        "rating": "No effect"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Chat",
+        "rating": "No effect"
+      }
+    ],
+    "tissues": [
+      "medial septal nucleus; nucleus of diagonal band"
+    ],
+    "celltypes": [
+      "cholinergic neuron"
+    ],
+    "n_experimental_rows": 3,
+    "source_row_indices": [
+      212,
+      213,
+      214
+    ]
+  },
+  {
+    "group_id": "DST38|Kleschevnikov et al. (2017)|Ts65Dn",
+    "treatment_identifier": "DST38",
+    "treatment": "Fluoxetine",
+    "treatment_short": "Fluoxetine",
+    "reference": "Kleschevnikov et al. (2017)",
+    "doi": "https://doi.org/10.1016/j.nbd.2017.03.009",
+    "species": "Mouse",
+    "model_name": "Ts65Dn",
+    "model_short": "Ts65Dn",
+    "sex": "Males only",
+    "doses": [
+      "10 μM"
+    ],
+    "routes": [
+      "bath"
+    ],
+    "ages_at_treatment": [
+      "4M-6M"
+    ],
+    "ages_at_testing": [
+      "4M-6M"
+    ],
+    "behavioral_outcomes": [],
+    "cellular_outcomes": [
+      {
+        "function": "long-term synaptic potentiation; positive regulation of long-term synaptic potentiation",
+        "rating": "Rescue"
+      }
+    ],
+    "molecular_outcomes": [
+      {
+        "target": "Kcnj6",
+        "rating": "Rescue"
+      }
+    ],
+    "tissues": [
+      "hippocampus molecular layer; hippocampus granule cell layer"
+    ],
+    "celltypes": [
+      "dentate gyrus granule cell"
+    ],
+    "n_experimental_rows": 1,
+    "source_row_indices": [
+      215
+    ]
+  }
+]

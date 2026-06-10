@@ -2,18 +2,46 @@ import * as fs from "fs";
 import * as path from "path";
 import { embedQuery } from "./embedder-server";
 
-export interface StructuredHit {
+interface BehavioralOutcome {
+  task: string;
+  rating: string;
+}
+
+interface CellularOutcome {
+  function: string;
+  rating: string;
+}
+
+interface MolecularOutcome {
+  target: string;
+  rating: string;
+}
+
+interface PaperSummary {
+  group_id: string;
   treatment_identifier: string;
-  canonical_name: string;
-  species: string;
-  model_name: string;
-  sex: string;
-  behavior_task: string;
-  behavior_effect: string;
-  cellular_effect: string;
-  molecular_effect: string;
+  treatment: string;
+  treatment_short: string;
   reference: string;
   doi: string;
+  species: string;
+  model_name: string;
+  model_short: string;
+  sex: string;
+  doses: string[];
+  routes: string[];
+  ages_at_treatment: string[];
+  ages_at_testing: string[];
+  behavioral_outcomes: BehavioralOutcome[];
+  cellular_outcomes: CellularOutcome[];
+  molecular_outcomes: MolecularOutcome[];
+  tissues: string[];
+  celltypes: string[];
+  n_experimental_rows: number;
+  source_row_indices: number[];
+}
+
+export interface StructuredHit extends PaperSummary {
   relevance_score: number;
   year: string;
 }
@@ -127,6 +155,8 @@ const STOP_WORDS = new Set([
 
 let interventionsCache: InterventionRow[] | null = null;
 let papersCache: PapersDB | null = null;
+let paperSummariesCache: PaperSummary[] | null = null;
+let summaryIndexCache: Map<string, PaperSummary> | null = null;
 
 function loadInterventions(): InterventionRow[] {
   if (!interventionsCache) {
@@ -135,6 +165,26 @@ function loadInterventions(): InterventionRow[] {
     interventionsCache = JSON.parse(content) as InterventionRow[];
   }
   return interventionsCache;
+}
+
+function loadPaperSummaries(): PaperSummary[] {
+  if (!paperSummariesCache) {
+    const filePath = path.join(process.cwd(), "data", "paper-summaries.json");
+    const content = fs.readFileSync(filePath, "utf-8");
+    paperSummariesCache = JSON.parse(content) as PaperSummary[];
+  }
+  return paperSummariesCache;
+}
+
+function getSummaryIndex(): Map<string, PaperSummary> {
+  if (!summaryIndexCache) {
+    const summaries = loadPaperSummaries();
+    summaryIndexCache = new Map();
+    for (const s of summaries) {
+      summaryIndexCache.set(s.group_id, s);
+    }
+  }
+  return summaryIndexCache;
 }
 
 function loadPapers(): PapersDB {
@@ -184,11 +234,13 @@ function searchStructured(
   pinnedDois: string[]
 ): StructuredHit[] {
   const rows = loadInterventions();
+  const summaryIndex = getSummaryIndex();
   const pinnedDoiSet = new Set(pinnedDois.map((d) => d.toLowerCase()));
 
   const scored = rows.map((row) => {
     const doi = (row.reference_with_link_to_publication || "").toLowerCase();
-    const isPinned = pinnedDoiSet.has(doi) ||
+    const isPinned =
+      pinnedDoiSet.has(doi) ||
       pinnedDois.some((p) => doi.includes(p.toLowerCase()));
 
     let score = 0;
@@ -203,37 +255,44 @@ function searchStructured(
     score += countMatches(row.reference || "", keywords) * 1;
 
     const year = extractYear(row.reference || "");
+    const groupId = `${row.treatment_identifier}|${row.reference}|${row.model_name}`;
 
     return {
       row,
+      groupId,
       score: isPinned ? Infinity : score,
       year,
       isPinned,
     };
   });
 
-  return scored
+  const rankedRows = scored
     .filter((s) => s.score > 0 || s.isPinned)
     .sort((a, b) => {
       if (b.score !== a.score) return b.score - a.score;
       return b.year.localeCompare(a.year);
-    })
-    .slice(0, maxHits)
-    .map((s) => ({
-      treatment_identifier: s.row.treatment_identifier || "",
-      canonical_name: s.row.canonical_treatment || s.row.treatment || "",
-      species: s.row.species || "",
-      model_name: s.row.model_name || "",
-      sex: s.row.sex || "",
-      behavior_task: s.row.behavior_task_of_interest || "",
-      behavior_effect: s.row.behavioral_effect || "",
-      cellular_effect: s.row.cellular_effect || "",
-      molecular_effect: s.row.molecular_effect || "",
-      reference: s.row.reference || "",
-      doi: s.row.reference_with_link_to_publication || "",
+    });
+
+  const seenGroups = new Set<string>();
+  const results: StructuredHit[] = [];
+
+  for (const s of rankedRows) {
+    if (seenGroups.has(s.groupId)) continue;
+    seenGroups.add(s.groupId);
+
+    const summary = summaryIndex.get(s.groupId);
+    if (!summary) continue;
+
+    results.push({
+      ...summary,
       relevance_score: s.isPinned ? 999 : s.score,
       year: s.year,
-    }));
+    });
+
+    if (results.length >= maxHits) break;
+  }
+
+  return results;
 }
 
 async function searchSemantic(
@@ -294,7 +353,7 @@ async function searchSemantic(
 function dedupeStructured(hits: StructuredHit[]): StructuredHit[] {
   const seen = new Set<string>();
   return hits.filter((h) => {
-    const key = `${h.treatment_identifier}-${h.doi}`;
+    const key = h.group_id;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
