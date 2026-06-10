@@ -105,7 +105,15 @@ export function SiteFooter() {
                   href="/ask"
                   className="text-text-secondary hover:text-text-primary transition-colors"
                 >
-                  Ask (coming soon)
+                  Ask AI
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contribute"
+                  className="text-text-secondary hover:text-text-primary transition-colors"
+                >
+                  Contribute Data
                 </Link>
               </li>
             </ul>

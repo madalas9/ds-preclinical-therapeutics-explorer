@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/experiments", label: "Experiments" },
   { href: "/compare", label: "Compare" },
   { href: "/ask", label: "Ask" },
+  { href: "/contribute", label: "Contribute" },
 ];
 
 export default function SiteLayout({
