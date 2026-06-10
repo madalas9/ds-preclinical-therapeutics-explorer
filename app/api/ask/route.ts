@@ -300,7 +300,7 @@ export async function POST(request: Request) {
       "X-Sources-Structured": JSON.stringify(
         structuredHits.map((h) => ({
           id: h.treatment_identifier,
-          name: h.canonical_name,
+          name: h.treatment,
           doi: h.doi,
         }))
       ),
