@@ -10,6 +10,17 @@ import { acquire, recordActualUsage } from "@/src/lib/throttle";
 
 const VALID_MODELS = ["gpt-5.4", "gpt-5.5"] as const;
 
+function toByteString(s: string): string {
+  return s
+    .replace(/β/g, "beta")
+    .replace(/α/g, "alpha")
+    .replace(/μ/g, "u")
+    .replace(/Δ/g, "delta")
+    .replace(/γ/g, "gamma")
+    .replace(/κ/g, "kappa")
+    .replace(/[^\x00-\xFF]/g, "?");
+}
+
 // Log environment on module load (once per cold start)
 console.log("[/api/ask] env check:", {
   hasFlyerKey: !!process.env.FLYER_API_KEY,
@@ -297,24 +308,41 @@ export async function POST(request: Request) {
     const provider = getFlyerProvider();
 
     const sourceHeaders = {
-      "X-Sources-Structured": JSON.stringify(
-        structuredHits.map((h) => ({
-          id: h.treatment_identifier,
-          name: h.treatment,
-          doi: h.doi,
-        }))
+      "X-Sources-Structured": toByteString(
+        JSON.stringify(
+          structuredHits.map((h) => ({
+            id: h.treatment_identifier,
+            name: h.treatment,
+            doi: h.doi,
+          }))
+        )
       ),
-      "X-Sources-Paper": JSON.stringify(
-        paperHits.map((h) => ({
-          title: h.title,
-          year: h.year,
-          doi: h.doi,
-        }))
+      "X-Sources-Paper": toByteString(
+        JSON.stringify(
+          paperHits.map((h) => ({
+            title: h.title,
+            year: h.year,
+            doi: h.doi,
+          }))
+        )
       ),
       "X-Max-Tokens": String(maxTokens),
       "X-Answer-Format": answerFormat,
       "X-Answer-Depth": answerDepth,
     };
+
+    for (const [k, v] of Object.entries(sourceHeaders)) {
+      for (let i = 0; i < v.length; i++) {
+        if (v.charCodeAt(i) > 255) {
+          console.error("[response header unicode leak]", {
+            header: k,
+            charCode: v.charCodeAt(i),
+            index: i,
+          });
+          break;
+        }
+      }
+    }
 
     console.log("[/api/ask]", model, answerFormat, answerDepth, deepDive ? "deep" : "std", maxTokens);
 
