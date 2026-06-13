@@ -247,7 +247,7 @@ export default function ContributePage() {
         <h1 className="text-2xl font-bold text-text-primary mb-2">Contribute to the Database</h1>
         <p className="text-text-secondary">
           Flag missing interventions, corrections, or data gaps. Submissions are reviewed by the
-          Sathyanesan Lab before inclusion.
+          T21RS Preclinical Committee before inclusion.
         </p>
       </div>
 
