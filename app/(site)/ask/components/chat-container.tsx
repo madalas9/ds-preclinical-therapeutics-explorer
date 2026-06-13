@@ -119,12 +119,16 @@ export function ChatContainer() {
   const userScrolledRef = useRef(false);
 
   const scrollToBottom = useCallback(() => {
-    if (!userScrolledRef.current) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (!userScrolledRef.current && containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
     }
   }, []);
 
   useEffect(() => {
+    if (messages.length === 0) return;
     scrollToBottom();
   }, [messages, scrollToBottom]);
 
@@ -325,10 +329,10 @@ export function ChatContainer() {
   const hasMessages = messages.length > 0;
 
   return (
-    <div className="flex flex-col h-[calc(100dvh-7rem)] sm:h-[calc(100dvh-9rem)]">
+    <div className="flex flex-col h-full min-h-0 py-4 sm:py-6">
       {/* Header controls */}
-      <div className="flex items-center justify-between gap-3 pb-4 border-b border-border mb-4 flex-wrap shrink-0">
-        <div className="flex items-center gap-2 flex-wrap">
+      <div className="relative pb-4 border-b border-border shrink-0">
+        <div className="flex items-center justify-center gap-2 flex-wrap">
           <ModelSelector value={model} onChange={setModel} disabled={isLoading} />
           <DeepDiveToggle enabled={deepDive} onChange={setDeepDive} disabled={isLoading} />
         </div>
@@ -336,17 +340,20 @@ export function ChatContainer() {
           <button
             type="button"
             onClick={handleClearChat}
-            className="text-sm text-text-tertiary hover:text-text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted min-h-[44px] flex items-center"
+            className="absolute right-0 top-0 text-xs text-text-tertiary hover:text-text-primary transition-colors px-2 py-1 rounded hover:bg-surface-muted"
           >
-            Clear chat
+            Clear
           </button>
         )}
       </div>
 
       {/* Messages area */}
-      <div ref={containerRef} className="flex-1 overflow-y-auto pb-4 min-h-0">
+      <div
+        ref={containerRef}
+        className={`flex-1 min-h-0 mt-4 ${hasMessages ? "overflow-y-auto" : "overflow-hidden"}`}
+      >
         {!hasMessages ? (
-          <div className="h-full flex flex-col justify-center max-w-3xl mx-auto px-2">
+          <div className="h-full flex flex-col justify-center items-center max-w-3xl mx-auto px-2 overflow-hidden">
             <div className="text-center mb-10">
               <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                 Ask the database
@@ -373,8 +380,13 @@ export function ChatContainer() {
       </div>
 
       {/* Input area */}
-      <div className="pt-4 border-t border-border bg-background shrink-0">
+      <div className="border-t border-border bg-background shrink-0 pt-4 pb-2">
         <ChatInput onSend={sendMessage} disabled={isLoading} />
+        <p className="text-xs text-center mt-2 text-text-secondary/60 max-w-4xl mx-auto px-4">
+          AI-generated responses may contain errors — verify all claims against cited sources.
+          <span className="mx-2 opacity-50">·</span>
+          Powered by University of Dayton&apos;s Azure OpenAI access.
+        </p>
       </div>
     </div>
   );

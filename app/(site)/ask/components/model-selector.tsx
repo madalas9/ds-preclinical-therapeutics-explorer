@@ -38,7 +38,7 @@ export function ModelSelector({ value, onChange, disabled }: ModelSelectorProps)
         type="button"
         onClick={() => !disabled && setOpen(!open)}
         disabled={disabled}
-        className="flex items-center gap-2 px-3 py-2 min-h-[44px] rounded-lg border border-border bg-surface text-sm text-text-primary hover:bg-surface-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="flex items-center gap-2 px-4 h-9 rounded-full border border-border bg-surface text-sm text-text-primary hover:bg-surface-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <span className="font-medium">{selected.label}</span>
         <span className="text-text-tertiary hidden sm:inline">({selected.description})</span>

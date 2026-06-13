@@ -8,8 +8,10 @@ export const metadata = {
 
 export default function AskPage() {
   return (
-    <main className="max-w-6xl mx-auto px-4 py-4 sm:py-6">
-      <ChatContainer />
+    <main className="h-[calc(100dvh-3.5rem)] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 h-full">
+        <ChatContainer />
+      </div>
     </main>
   );
 }
