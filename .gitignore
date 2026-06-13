@@ -55,3 +55,7 @@ tailwindcss-*.log
 AGENTS.md
 CLAUDE.md
 PROJECT_STATE.md
+
+# Personal poster analysis work — do not commit
+analysis/
+
