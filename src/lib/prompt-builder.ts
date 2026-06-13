@@ -22,13 +22,30 @@ const SYSTEM_MESSAGE_BASE = `You are a scientific research assistant for the Dow
 - Vague follow-ups refer to the prior topic
 
 ## Citation Rules
-- If a database record has a DST ID, cite as: [DST16 · Costa 2008](DOI)
-- If only a paper passage (no DST ID), cite as: [Costa 2008](DOI)
+
+**Database-backed claims** (when a DST row supports the claim):
+  Format: [DST## · Author Year](DOI)
+  Example: [DST29 · Stringer 2017](https://doi.org/10.1016/j.physbeh.2017.05.003)
+
+**Paper-only claims** (paper passage only, no DST row):
+  Format: ([Author, Year](DOI)) — APA 7 parenthetical style
+  Example: ([Nguyen, 2018](https://doi.org/10.1234/example))
+  2 authors: ([Smith & Jones, 2020](DOI))
+  3+ authors: ([Smith et al., 2020](DOI))
+
+**General rules:**
 - NEVER write "DST??" or guess DST identifiers
 - Every citation must come from retrieved evidence
 - Keep citations compact and inline
 - Never fabricate DOIs or data
 - Use 'NT' for Not Tested, never 'NA'
+
+## Citation Anti-patterns (NEVER do these)
+- NEVER: "developed 2024" with 2024 as a bare hyperlink
+- NEVER: [2024](DOI) — year alone is not a valid citation
+- NEVER: drop the author from a paper citation
+- ALWAYS: include author + year together inside the link text
+- If author unknown, write: ([Author unknown, YEAR](DOI))
 
 ## Evidence Blocks
 Each evidence block aggregates all curated outcomes from one paper. If an outcome axis or specific task is not listed in a block, that paper did not curate it — do not infer 'not tested.'`;
@@ -183,14 +200,27 @@ function formatStructuredHit(hit: StructuredHit): string {
   return lines.join("\n");
 }
 
+function extractFirstAuthor(authors: string): string {
+  if (!authors) return "Unknown";
+  const firstAuthor = authors.split(",")[0].split(" and ")[0].trim();
+  const parts = firstAuthor.split(" ");
+  return parts[0] || "Unknown";
+}
+
 function formatPaperHit(hit: PaperHit): string {
   const excerpt =
     hit.abstract_excerpt.length > 300
       ? hit.abstract_excerpt.slice(0, 300) + "..."
       : hit.abstract_excerpt;
 
-  return `**${hit.title}** (${hit.year})
+  const firstAuthor = extractFirstAuthor(hit.authors);
+  const hasMultipleAuthors = hit.authors && (hit.authors.includes(",") || hit.authors.includes(" and "));
+  const authorCitation = hasMultipleAuthors ? `${firstAuthor} et al.` : firstAuthor;
+
+  return `**Paper: ${authorCitation} (${hit.year})**
+Title: ${hit.title}
 DOI: ${hit.doi}
+Cite as: ([${authorCitation}, ${hit.year}](${hit.doi}))
 > ${excerpt}`;
 }
 
