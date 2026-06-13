@@ -396,18 +396,21 @@ function MobileFilterSheet({
             options={filterOptions.behavior_outcomes}
             selected={filters.behaviorOutcome}
             onChange={(v) => updateSet("behaviorOutcome", v)}
+            renderLabel={(val) => (val === "NA" ? "NT" : val)}
           />
           <MobileFilterSection
             label="Cellular outcome"
             options={filterOptions.cellular_outcomes}
             selected={filters.cellularOutcome}
             onChange={(v) => updateSet("cellularOutcome", v)}
+            renderLabel={(val) => (val === "NA" ? "NT" : val)}
           />
           <MobileFilterSection
             label="Molecular outcome"
             options={filterOptions.molecular_outcomes}
             selected={filters.molecularOutcome}
             onChange={(v) => updateSet("molecularOutcome", v)}
+            renderLabel={(val) => (val === "NA" ? "NT" : val)}
           />
         </div>
       </div>
@@ -744,13 +747,16 @@ export function ExperimentsBrowser({
       chips.push({ label: "Route", value: v, key: `route-${v}`, filterKey: "route", filterValue: v });
     }
     for (const v of filters.behaviorOutcome) {
-      chips.push({ label: "Behavior", value: v, key: `beh-${v}`, filterKey: "behaviorOutcome", filterValue: v });
+      const display = v === "NA" ? "NT" : v;
+      chips.push({ label: "Behavior", value: display, key: `beh-${v}`, filterKey: "behaviorOutcome", filterValue: v });
     }
     for (const v of filters.cellularOutcome) {
-      chips.push({ label: "Cellular", value: v, key: `cell-${v}`, filterKey: "cellularOutcome", filterValue: v });
+      const display = v === "NA" ? "NT" : v;
+      chips.push({ label: "Cellular", value: display, key: `cell-${v}`, filterKey: "cellularOutcome", filterValue: v });
     }
     for (const v of filters.molecularOutcome) {
-      chips.push({ label: "Molecular", value: v, key: `mol-${v}`, filterKey: "molecularOutcome", filterValue: v });
+      const display = v === "NA" ? "NT" : v;
+      chips.push({ label: "Molecular", value: display, key: `mol-${v}`, filterKey: "molecularOutcome", filterValue: v });
     }
     return chips;
   }, [filters, filterOptions.treatmentMap, filterOptions.treatmentShortMap, filterOptions.modelShortMap]);
@@ -1354,18 +1360,21 @@ export function ExperimentsBrowser({
             options={behaviorOutcomeOptions}
             selected={filters.behaviorOutcome}
             onChange={(v) => updateFilterSet("behaviorOutcome", v)}
+            renderLabel={(val) => (val === "NA" ? "NT" : val)}
           />
           <MultiSelectFilter
             label="Cellular outcome"
             options={cellularOutcomeOptions}
             selected={filters.cellularOutcome}
             onChange={(v) => updateFilterSet("cellularOutcome", v)}
+            renderLabel={(val) => (val === "NA" ? "NT" : val)}
           />
           <MultiSelectFilter
             label="Molecular outcome"
             options={molecularOutcomeOptions}
             selected={filters.molecularOutcome}
             onChange={(v) => updateFilterSet("molecularOutcome", v)}
+            renderLabel={(val) => (val === "NA" ? "NT" : val)}
           />
         </div>
       </div>

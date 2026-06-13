@@ -52,11 +52,13 @@ function MultiSelectFilter({
   options,
   selected,
   onChange,
+  renderLabel,
 }: {
   label: string;
   options: string[];
   selected: Set<string>;
   onChange: (values: Set<string>) => void;
+  renderLabel?: (value: string) => string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -103,7 +105,7 @@ function MultiSelectFilter({
                   onChange={() => toggle(opt)}
                   className="h-4 w-4 rounded border-border"
                 />
-                <span className="text-foreground">{opt}</span>
+                <span className="text-foreground">{renderLabel ? renderLabel(opt) : opt}</span>
               </label>
             ))}
           </div>
@@ -290,6 +292,7 @@ export function TreatmentsTable({ data }: TreatmentsTableProps) {
           options={[...OUTCOME_ORDER]}
           selected={outcomeFilter}
           onChange={setOutcomeFilter}
+          renderLabel={(val) => (val === "NA" ? "NT" : val)}
         />
         {hasFilters && (
           <button
