@@ -30,17 +30,36 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
 
   const columns = useMemo<ColumnDef<Intervention>[]>(
     () => [
-      // 1. Reference
+      // 1. Reference (links to DOI)
       {
         id: "reference",
         accessorKey: "reference",
         header: "Reference",
-        cell: ({ row }) => (
-          <span className="font-mono text-xs text-foreground whitespace-normal break-words leading-snug min-w-[120px] block">
-            {extractCitation(row.original.reference)}
-          </span>
-        ),
-        size: 120,
+        cell: ({ row }) => {
+          const ref = extractCitation(row.original.reference);
+          const doi = row.original.reference_with_link_to_publication;
+          if (doi && doi !== "NA" && doi.startsWith("http")) {
+            return (
+              <a
+                href={doi}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open paper: ${ref}`}
+                className="font-mono text-xs text-foreground hover:text-interactive underline-offset-2 hover:underline transition-colors whitespace-normal break-words leading-snug min-w-[120px] block"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {ref}
+                <ExternalLink className="inline h-3 w-3 ml-1 opacity-60" />
+              </a>
+            );
+          }
+          return (
+            <span className="font-mono text-xs text-foreground whitespace-normal break-words leading-snug min-w-[120px] block">
+              {ref}
+            </span>
+          );
+        },
+        size: 140,
       },
       // 2. Species
       {
@@ -319,30 +338,6 @@ export function ExperimentsTable({ experiments }: ExperimentsTableProps) {
           />
         ),
         size: 110,
-        enableSorting: false,
-      },
-      // 17. DOI
-      {
-        id: "doi",
-        header: "DOI",
-        cell: ({ row }) => {
-          const doi = row.original.reference_with_link_to_publication;
-          if (!doi || doi === "NA")
-            return <span className="text-muted-foreground/50">—</span>;
-          return (
-            <a
-              href={doi}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-interactive hover:text-interactive-hover whitespace-nowrap"
-              onClick={(e) => e.stopPropagation()}
-            >
-              open
-              <ExternalLink className="h-3 w-3" />
-            </a>
-          );
-        },
-        size: 70,
         enableSorting: false,
       },
     ],
