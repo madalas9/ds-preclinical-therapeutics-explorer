@@ -329,9 +329,9 @@ export function ChatContainer() {
   const hasMessages = messages.length > 0;
 
   return (
-    <div className="flex flex-col h-full min-h-0 py-4 sm:py-6">
+    <div className="flex flex-col h-full min-h-0 py-2 sm:py-6">
       {/* Header controls */}
-      <div className="relative pb-4 border-b border-border shrink-0">
+      <div className="relative py-2 sm:py-3 border-b border-border shrink-0">
         <div className="flex items-center justify-center gap-2 flex-wrap">
           <ModelSelector value={model} onChange={setModel} disabled={isLoading} />
           <DeepDiveToggle enabled={deepDive} onChange={setDeepDive} disabled={isLoading} />
@@ -340,7 +340,7 @@ export function ChatContainer() {
           <button
             type="button"
             onClick={handleClearChat}
-            className="absolute right-0 top-0 text-xs text-text-tertiary hover:text-text-primary transition-colors px-2 py-1 rounded hover:bg-surface-muted"
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-xs text-text-tertiary hover:text-text-primary transition-colors px-2 py-1 rounded hover:bg-surface-muted"
           >
             Clear
           </button>
@@ -350,15 +350,15 @@ export function ChatContainer() {
       {/* Messages area */}
       <div
         ref={containerRef}
-        className={`flex-1 min-h-0 mt-4 ${hasMessages ? "overflow-y-auto" : "overflow-hidden"}`}
+        className={`flex-1 min-h-0 mt-2 sm:mt-4 ${hasMessages ? "overflow-y-auto" : "overflow-hidden"}`}
       >
         {!hasMessages ? (
-          <div className="h-full flex flex-col justify-center items-center max-w-3xl mx-auto px-2 overflow-hidden">
-            <div className="text-center mb-10">
-              <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+          <div className="h-full flex flex-col justify-start sm:justify-center items-center max-w-3xl mx-auto px-2 pt-2 sm:pt-0">
+            <div className="text-center mb-3 sm:mb-10">
+              <h1 className="text-lg sm:text-3xl font-bold text-text-primary mb-1 sm:mb-3">
                 Ask the database
               </h1>
-              <p className="text-text-secondary text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+              <p className="text-text-secondary text-xs sm:text-base max-w-lg mx-auto leading-snug sm:leading-relaxed">
                 Get evidence-grounded answers about Down syndrome preclinical research. Every claim
                 is cited with database records and paper passages.
               </p>
@@ -380,11 +380,14 @@ export function ChatContainer() {
       </div>
 
       {/* Input area */}
-      <div className="border-t border-border bg-background shrink-0 pt-4 pb-2">
+      <div className="border-t border-border bg-background shrink-0 pt-2 sm:pt-4 pb-1">
         <ChatInput onSend={sendMessage} disabled={isLoading} />
-        <p className="text-xs text-center mt-2 text-text-secondary/60 max-w-4xl mx-auto px-4">
+        <p
+          className="text-[7px] sm:text-[11px] text-center mt-1 max-w-4xl mx-auto px-4 leading-[1.3]"
+          style={{ color: "#8C8C8C" }}
+        >
           AI-generated responses may contain errors — verify all claims against cited sources.
-          <span className="mx-2 opacity-50">·</span>
+          <span className="mx-1">·</span>
           Powered by University of Dayton&apos;s Azure OpenAI access.
         </p>
       </div>
