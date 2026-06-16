@@ -4,14 +4,14 @@ import Image from "next/image";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface mt-16">
-      <div className="max-w-7xl mx-auto px-4 py-10 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-8 md:gap-10 lg:gap-14 items-start">
           {/* COLUMN 1 — SUPPORTED BY */}
           <div>
             <p className="text-xs uppercase tracking-wider text-text-tertiary mb-4">
               Supported by
             </p>
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center gap-3 md:gap-6">
               <Link
                 href="https://udayton.edu"
                 target="_blank"
@@ -20,12 +20,11 @@ export function SiteFooter() {
                 className="block transition-opacity opacity-80 hover:opacity-100 dark:opacity-90 dark:hover:opacity-100"
               >
                 <Image
-                  src="/logos/udayton.svg"
+                  src="/logos/udayton.png"
                   alt="University of Dayton"
-                  width={160}
-                  height={48}
-                  className="object-contain"
-                  style={{ height: "48px", width: "auto" }}
+                  width={96}
+                  height={108}
+                  className="object-contain h-14 md:h-20 lg:h-24 w-auto mb-[-0.75rem] md:mb-[-1rem]"
                 />
               </Link>
               <Link
@@ -38,26 +37,25 @@ export function SiteFooter() {
                 <Image
                   src="/logos/t21rs.png"
                   alt="Trisomy 21 Research Society"
-                  width={48}
-                  height={48}
-                  className="object-contain"
-                  style={{ height: "48px", width: "48px" }}
+                  width={64}
+                  height={64}
+                  className="object-contain h-10 md:h-14 lg:h-16 w-auto"
                 />
               </Link>
             </div>
           </div>
 
           {/* COLUMN 2 — APP DESCRIPTION */}
-          <div className="space-y-2">
-            <h3 className="text-sm font-semibold text-text-primary">
+          <div className="max-w-md lg:max-w-lg">
+            <h3 className="text-sm md:text-base lg:text-lg font-semibold text-text-primary mb-2 md:mb-3">
               DS Preclinical Therapeutics Explorer
             </h3>
-            <p className="text-xs text-text-secondary leading-relaxed">
+            <p className="text-xs md:text-sm lg:text-base text-text-secondary leading-relaxed mb-2 md:mb-3">
               A curated database of preclinical drug interventions tested in
               Down syndrome animal models. Built and maintained by the
               Sathyanesan Lab at the University of Dayton.
             </p>
-            <p className="text-xs text-text-tertiary leading-relaxed">
+            <p className="text-xs md:text-sm lg:text-base text-text-tertiary leading-relaxed">
               232 experiments · 38 compounds · 71 publications · 4 species
             </p>
           </div>
@@ -122,7 +120,7 @@ export function SiteFooter() {
 
         {/* BOTTOM STRIP */}
         <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-text-tertiary">
-          <p>© 2026 Sathyanesan Lab · University of Dayton</p>
+          <p>© 2026 <a href="https://sathyanesan-lab.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary underline-offset-2 hover:underline transition-colors">Sathyanesan Lab</a> · University of Dayton</p>
           <p>
             Source data curated from peer-reviewed publications. See individual
             DOIs for citations.
