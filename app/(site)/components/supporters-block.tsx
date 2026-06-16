@@ -9,7 +9,7 @@ export function SupportersBlock() {
           Supported by
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 mt-6">
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 mt-6">
           <Link
             href="https://udayton.edu"
             target="_blank"
@@ -18,12 +18,12 @@ export function SupportersBlock() {
             className="block transition-opacity opacity-90 hover:opacity-100"
           >
             <Image
-              src="/logos/udayton.svg"
+              src="/logos/udayton.png"
               alt="University of Dayton"
-              width={280}
-              height={84}
-              className="object-contain"
-              style={{ height: "clamp(64px, 8vw, 80px)", width: "auto" }}
+              width={140}
+              height={160}
+              className="object-contain h-24 sm:h-28 w-auto"
+              style={{ marginBottom: "-1.5rem" }}
               priority
             />
           </Link>
@@ -38,19 +38,18 @@ export function SupportersBlock() {
             <Image
               src="/logos/t21rs.png"
               alt="Trisomy 21 Research Society"
-              width={84}
-              height={84}
-              className="object-contain"
-              style={{ height: "clamp(64px, 8vw, 80px)", width: "clamp(64px, 8vw, 80px)" }}
+              width={100}
+              height={100}
+              className="object-contain h-16 sm:h-20 w-auto"
               priority
             />
           </Link>
         </div>
 
         <p className="text-text-secondary text-base md:text-lg max-w-2xl mx-auto mt-8 leading-relaxed">
-          This resource is developed by the Sathyanesan Lab at the University
-          of Dayton, in support of the global Down syndrome research community
-          led by the Trisomy 21 Research Society.
+          This resource is developed and is currently maintained by the
+          Sathyanesan Lab at the University of Dayton, in support of the global
+          Down syndrome research community led by the Trisomy 21 Research Society.
         </p>
       </div>
     </section>
