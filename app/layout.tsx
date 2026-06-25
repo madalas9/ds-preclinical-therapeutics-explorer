@@ -3,6 +3,7 @@ import { Atkinson_Hyperlegible, JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const atkinson = Atkinson_Hyperlegible({
@@ -42,6 +43,7 @@ export default function RootLayout({
           <Toaster position="bottom-right" richColors />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
