@@ -21,6 +21,18 @@ function toByteString(s: string): string {
     .replace(/[^\x00-\xFF]/g, "?");
 }
 
+// Reject obviously oversized request bodies before parsing. Normal Deep Dive
+// requests (question <=1k + <=6 truncated history messages) stay well under this.
+const MAX_REQUEST_BYTES = 150 * 1024;
+
+// Cap individual source fields so the X-Sources-* response headers stay small
+// and never approach proxy/CDN header-size limits. The source panel only needs
+// enough to label and link each source.
+function capField(s: string | undefined, max: number): string {
+  if (!s) return s ?? "";
+  return s.length > max ? s.slice(0, max) + "..." : s;
+}
+
 // Log environment on module load (once per cold start) — non-production only
 if (process.env.NODE_ENV !== "production") {
   console.log("[/api/ask] env check:", {
@@ -242,6 +254,14 @@ function buildRetrievalQuery(
 
 export async function POST(request: Request) {
   try {
+    const contentLength = request.headers.get("content-length");
+    if (contentLength && Number(contentLength) > MAX_REQUEST_BYTES) {
+      return Response.json(
+        { error: "Request too large", message: "Request body exceeds the 150 KB limit." },
+        { status: 413 }
+      );
+    }
+
     const body = await request.json();
     const parsed = RequestSchema.safeParse(body);
 
@@ -318,17 +338,17 @@ export async function POST(request: Request) {
         JSON.stringify(
           structuredHits.map((h) => ({
             id: h.treatment_identifier,
-            name: h.treatment,
-            doi: h.doi,
+            name: capField(h.treatment, 100),
+            doi: capField(h.doi, 150),
           }))
         )
       ),
       "X-Sources-Paper": toByteString(
         JSON.stringify(
           paperHits.map((h) => ({
-            title: h.title,
+            title: capField(h.title, 140),
             year: h.year,
-            doi: h.doi,
+            doi: capField(h.doi, 150),
           }))
         )
       ),
