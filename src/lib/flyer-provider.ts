@@ -74,13 +74,15 @@ export function getFlyerProvider() {
 
           scanHeadersForUnicode(headers);
 
-          console.log("[flyer-provider] calling:", {
-            path: azureUrl.split("?")[0],
-            model: model,
-            apiVersion: apiVersion,
-            hasMessages: !!(body.messages?.length),
-            maxTokens: body.max_completion_tokens,
-          });
+          if (process.env.NODE_ENV !== "production") {
+            console.log("[flyer-provider] calling:", {
+              path: azureUrl.split("?")[0],
+              model: model,
+              apiVersion: apiVersion,
+              hasMessages: !!(body.messages?.length),
+              maxTokens: body.max_completion_tokens,
+            });
+          }
 
           const res = await fetch(azureUrl, {
             method: options?.method ?? "POST",
@@ -88,13 +90,15 @@ export function getFlyerProvider() {
             body: JSON.stringify(body),
           });
 
-          console.log("[flyer-provider] response:", {
-            status: res.status,
-            statusText: res.statusText,
-            contentType: res.headers.get("content-type"),
-            contentLength: res.headers.get("content-length"),
-            model: model,
-          });
+          if (process.env.NODE_ENV !== "production") {
+            console.log("[flyer-provider] response:", {
+              status: res.status,
+              statusText: res.statusText,
+              contentType: res.headers.get("content-type"),
+              contentLength: res.headers.get("content-length"),
+              model: model,
+            });
+          }
 
           return res;
         }

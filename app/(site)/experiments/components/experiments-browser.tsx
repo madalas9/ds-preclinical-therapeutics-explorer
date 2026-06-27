@@ -261,7 +261,13 @@ function exportCSV(rows: EnrichedIntervention[]) {
     csvRows.push(
       values
         .map((v) => {
-          const str = String(v ?? "");
+          let str = String(v ?? "");
+          // CSV formula-injection guard: a leading =, +, -, or @ can be executed
+          // as a formula by Excel/Sheets. Prefix with a single quote to neutralize
+          // it. DOIs ("10.x" / "http...") are unaffected, so export is preserved.
+          if (/^[=+\-@]/.test(str)) {
+            str = `'${str}`;
+          }
           if (str.includes(",") || str.includes('"') || str.includes("\n")) {
             return `"${str.replace(/"/g, '""')}"`;
           }

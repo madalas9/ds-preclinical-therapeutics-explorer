@@ -21,25 +21,43 @@ function toByteString(s: string): string {
     .replace(/[^\x00-\xFF]/g, "?");
 }
 
-// Log environment on module load (once per cold start)
-console.log("[/api/ask] env check:", {
-  hasFlyerKey: !!process.env.FLYER_API_KEY,
-  hasFlyerUrl: !!process.env.FLYER_BASE_URL,
-  isVercel: process.env.VERCEL === "1",
-  hasHfToken: !!process.env.HF_TOKEN,
-  nodeEnv: process.env.NODE_ENV,
-});
+// Reject obviously oversized request bodies before parsing. Normal Deep Dive
+// requests (question <=1k + <=6 truncated history messages) stay well under this.
+const MAX_REQUEST_BYTES = 150 * 1024;
+
+// Cap individual source fields so the X-Sources-* response headers stay small
+// and never approach proxy/CDN header-size limits. The source panel only needs
+// enough to label and link each source.
+function capField(s: string | undefined, max: number): string {
+  if (!s) return s ?? "";
+  return s.length > max ? s.slice(0, max) + "..." : s;
+}
+
+// Log environment on module load (once per cold start) — non-production only
+if (process.env.NODE_ENV !== "production") {
+  console.log("[/api/ask] env check:", {
+    hasFlyerKey: !!process.env.FLYER_API_KEY,
+    hasFlyerUrl: !!process.env.FLYER_BASE_URL,
+    isVercel: process.env.VERCEL === "1",
+    hasHfToken: !!process.env.HF_TOKEN,
+    nodeEnv: process.env.NODE_ENV,
+  });
+}
 
 const MessageSchema = z.object({
   role: z.enum(["user", "assistant"]),
-  content: z.string().max(10000),
+  // Per-message cap. The client truncates history well below this (assistant
+  // 3000 / user 6000 chars); the modest 25k ceiling is headroom that prevents
+  // the Continue/follow-up 400 without inviting oversized, budget-burning bodies.
+  content: z.string().max(25000),
 });
 
 const RequestSchema = z.object({
   question: z.string().min(1).max(1000),
   model: z.enum(VALID_MODELS),
   deepDive: z.boolean(),
-  messages: z.array(MessageSchema).max(12).optional(),
+  // Total history cap (client sends at most the 6 most recent messages).
+  messages: z.array(MessageSchema).max(8).optional(),
   isContinuation: z.boolean().optional(),
 });
 
@@ -236,6 +254,14 @@ function buildRetrievalQuery(
 
 export async function POST(request: Request) {
   try {
+    const contentLength = request.headers.get("content-length");
+    if (contentLength && Number(contentLength) > MAX_REQUEST_BYTES) {
+      return Response.json(
+        { error: "Request too large", message: "Request body exceeds the 150 KB limit." },
+        { status: 413 }
+      );
+    }
+
     const body = await request.json();
     const parsed = RequestSchema.safeParse(body);
 
@@ -312,17 +338,17 @@ export async function POST(request: Request) {
         JSON.stringify(
           structuredHits.map((h) => ({
             id: h.treatment_identifier,
-            name: h.treatment,
-            doi: h.doi,
+            name: capField(h.treatment, 100),
+            doi: capField(h.doi, 150),
           }))
         )
       ),
       "X-Sources-Paper": toByteString(
         JSON.stringify(
           paperHits.map((h) => ({
-            title: h.title,
+            title: capField(h.title, 140),
             year: h.year,
-            doi: h.doi,
+            doi: capField(h.doi, 150),
           }))
         )
       ),
@@ -344,7 +370,9 @@ export async function POST(request: Request) {
       }
     }
 
-    console.log("[/api/ask]", model, answerFormat, answerDepth, deepDive ? "deep" : "std", maxTokens);
+    if (process.env.NODE_ENV !== "production") {
+      console.log("[/api/ask]", model, answerFormat, answerDepth, deepDive ? "deep" : "std", maxTokens);
+    }
 
     // Use streamText for all models (GPT-5.4 and GPT-5.5)
     const result = streamText({
@@ -353,12 +381,14 @@ export async function POST(request: Request) {
       prompt: userMessage,
       maxOutputTokens: maxTokens,
       onFinish: ({ usage, finishReason, text }) => {
-        console.log("[/api/ask] stream finished:", {
-          model: model,
-          finishReason: finishReason,
-          textLength: text?.length ?? 0,
-          tokens: usage?.totalTokens,
-        });
+        if (process.env.NODE_ENV !== "production") {
+          console.log("[/api/ask] stream finished:", {
+            model: model,
+            finishReason: finishReason,
+            textLength: text?.length ?? 0,
+            tokens: usage?.totalTokens,
+          });
+        }
         recordActualUsage(usage?.totalTokens ?? estimatedTokens, estimatedTokens);
       },
     });

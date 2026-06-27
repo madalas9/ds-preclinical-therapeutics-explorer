@@ -21,6 +21,20 @@ interface ConversationMessage {
   content: string;
 }
 
+// Budget-safe history limits. The lab shares a small weekly AI token budget, so
+// we cap how much prior conversation is replayed to /api/ask on each turn.
+const HISTORY_MAX_MESSAGES = 6;
+const ASSISTANT_HISTORY_MAX_CHARS = 3000;
+const USER_HISTORY_MAX_CHARS = 6000;
+const TRUNCATION_NOTICE = "\n\n[...truncated for request size and token budget...]";
+
+function truncateForHistory(role: "user" | "assistant", content: string): string {
+  const maxChars =
+    role === "assistant" ? ASSISTANT_HISTORY_MAX_CHARS : USER_HISTORY_MAX_CHARS;
+  if (content.length <= maxChars) return content;
+  return content.slice(0, maxChars) + TRUNCATION_NOTICE;
+}
+
 function detectIncompleteAnswer(
   content: string,
   deepDive: boolean,
@@ -150,13 +164,13 @@ export function ChatContainer() {
 
   function buildConversationHistory(): ConversationMessage[] {
     const history: ConversationMessage[] = [];
-    const recentMessages = messages.slice(-10);
+    const recentMessages = messages.slice(-HISTORY_MAX_MESSAGES);
 
     for (const msg of recentMessages) {
       if (msg.content && msg.content.length > 0 && !msg.isStreaming && !msg.isError) {
         history.push({
           role: msg.role,
-          content: msg.content,
+          content: truncateForHistory(msg.role, msg.content),
         });
       }
     }

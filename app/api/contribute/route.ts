@@ -35,6 +35,36 @@ const TYPE_LABELS: Record<string, string> = {
   other: "Other",
 };
 
+// Best-effort, in-memory per-IP rate limit. This is per serverless instance and
+// resets on cold start — not a hard guarantee, but enough to blunt casual abuse
+// and protect the shared email/Resend quota without adding a dependency.
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const rateBuckets = new Map<string, { count: number; resetAt: number }>();
+
+function getClientIp(request: Request): string {
+  const xff = request.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  const xri = request.headers.get("x-real-ip");
+  if (xri) return xri.trim();
+  return "unknown";
+}
+
+// Returns true if the request is allowed (and records it), false if over limit.
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const bucket = rateBuckets.get(ip);
+  if (!bucket || now > bucket.resetAt) {
+    rateBuckets.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+  if (bucket.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+  bucket.count += 1;
+  return true;
+}
+
 function buildEmailHtml(data: z.infer<typeof SubmissionSchema>): string {
   const timestamp = new Date().toISOString();
   const typeLabel = TYPE_LABELS[data.submission_type] || data.submission_type;
@@ -141,6 +171,18 @@ export async function POST(request: Request) {
     if (data.honeypot && data.honeypot.length > 0) {
       console.log("[/api/contribute] Honeypot triggered, ignoring submission");
       return Response.json({ ok: true });
+    }
+
+    // Rate-limit only genuine (validated, non-honeypot) submissions.
+    const clientIp = getClientIp(request);
+    if (!checkRateLimit(clientIp)) {
+      return Response.json(
+        {
+          ok: false,
+          error: "Too many submissions from this connection. Please try again in a little while.",
+        },
+        { status: 429 }
+      );
     }
 
     const apiKey = process.env.RESEND_API_KEY;
