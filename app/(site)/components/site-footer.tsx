@@ -121,10 +121,34 @@ export function SiteFooter() {
         {/* BOTTOM STRIP */}
         <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-text-tertiary">
           <p>© 2026 <a href="https://sathyanesan-lab.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-text-primary underline-offset-2 hover:underline transition-colors">Sathyanesan Lab</a> · University of Dayton</p>
-          <p>
-            Source data curated from peer-reviewed publications. See individual
-            DOIs for citations.
-          </p>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://doi.org/10.5281/zenodo.20848332"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://zenodo.org/badge/DOI/10.5281/zenodo.20848332.svg"
+                alt="DOI: 10.5281/zenodo.20848332"
+                className="h-5"
+              />
+            </a>
+            <a
+              href="https://github.com/madalas9/ds-preclinical-therapeutics-explorer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white"
+                alt="GitHub repository"
+                className="h-5"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

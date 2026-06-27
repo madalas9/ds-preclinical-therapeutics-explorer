@@ -61,7 +61,7 @@ export default function HomePage() {
             href="/ask"
             className="inline-flex h-12 items-center justify-center rounded-2xl border-2 border-border bg-surface px-6 text-base font-medium text-foreground transition-colors hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring clay-shadow-sm"
           >
-            Ask a Question
+            Talk to AI
           </Link>
         </div>
       </section>

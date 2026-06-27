@@ -76,7 +76,56 @@ Auto-deploys to Vercel on every push to `main`.
 - Data curated from peer-reviewed publications. See individual DOIs
   in each compound's detail page for proper citations.
 
+## Citation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20848332.svg)](https://doi.org/10.5281/zenodo.20848332)
+
+If you use this resource, please cite it. A machine-readable `CITATION.cff`
+is included in the repository root (GitHub shows a **"Cite this repository"**
+button in the sidebar).
+
+The DOI below is the **concept DOI** — it always resolves to the latest version.
+
+**APA**
+
+> Madala, S., Sathyanesan, A., Johnson, L., Cadwell, M., Roper, R. J.,
+> Tramutola, A., Maugham-Macan, M., Thyme, S., & Wiseman, F. (2026).
+> *madalas9/ds-preclinical-therapeutics-explorer: DS Preclinical Therapeutics
+> Explorer v1.0.0* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.20848332
+
+**BibTeX**
+
+```bibtex
+@software{madala_2026_ds_preclinical_explorer,
+  author    = {Madala, Sanjay and
+               Sathyanesan, Aaron and
+               Johnson, Linnea and
+               Cadwell, Mikayla and
+               Roper, Randall J. and
+               Tramutola, Antonella and
+               Maugham-Macan, Michelle and
+               Thyme, Summer and
+               Wiseman, Frances},
+  title     = {DS Preclinical Therapeutics Explorer},
+  year      = {2026},
+  version   = {1.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20848332},
+  url       = {https://doi.org/10.5281/zenodo.20848332}
+}
+```
+
+> **Versioned citation:** To cite this specific release (v1.0.0), use the
+> version DOI `10.5281/zenodo.20848333` instead of the concept DOI above.
+
 ## License
 
-Research tool. Refer to individual publication DOIs for data citation
-requirements.
+This project is **dual-licensed**:
+
+- **Code** (application source, scripts, components) — [MIT License](./LICENSE)
+- **Curated dataset** (`data/`: intervention records, three-axis outcome
+  annotations, paper summaries) — [Creative Commons Attribution 4.0
+  International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+
+If you reuse the curated data, attribution is required under CC BY 4.0 —
+please cite the resource as shown above.

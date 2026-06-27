@@ -1,0 +1,65 @@
+cff-version: 1.2.0
+title: DS Preclinical Therapeutics Explorer
+message: >-
+  If you use this resource, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Sanjay
+    family-names: Madala
+    email: madalas9@udayton.edu
+    affiliation: University of Dayton
+    orcid: 'https://orcid.org/0009-0003-6212-6047'
+  - given-names: Aaron
+    family-names: Sathyanesan
+    affiliation: University of Dayton
+    orcid: 'https://orcid.org/0000-0002-9226-7831'
+  - given-names: Linnea
+    family-names: Johnson
+    affiliation: Indiana University
+    orcid: 'https://orcid.org/0009-0004-1926-3801'
+  - given-names: Mikayla
+    family-names: Cadwell
+    affiliation: Indiana University
+  - given-names: Randall J.
+    family-names: Roper
+    affiliation: Indiana University Purdue University at Indianapolis
+    orcid: 'https://orcid.org/0000-0002-9860-5037'
+  - given-names: Antonella
+    family-names: Tramutola
+    affiliation: Sapienza University of Rome
+    orcid: 'https://orcid.org/0000-0002-9564-2086'
+  - given-names: Michelle
+    family-names: Maugham-Macan
+    affiliation: University of the Sunshine Coast
+    orcid: 'https://orcid.org/0000-0001-5775-5162'
+  - given-names: Summer
+    family-names: Thyme
+    affiliation: University of Alabama at Birmingham
+    orcid: 'https://orcid.org/0000-0003-3593-4148'
+  - given-names: Frances
+    family-names: Wiseman
+    affiliation: University College London
+    orcid: 'https://orcid.org/0000-0001-9323-3548'
+repository-code: 'https://github.com/madalas9/ds-preclinical-therapeutics-explorer'
+url: 'https://ds-preclinical-therapeutics-explore.vercel.app'
+abstract: >-
+  A curated, citation-forward web application for exploring
+  preclinical pharmacological and dietary interventions tested
+  in Down syndrome animal models. Standardizes intervention
+  metadata, biological context, and three-axis outcome
+  annotations across 232 experimental conditions, 38 compounds,
+  71 peer-reviewed publications, 22 animal models, and 4 species.
+keywords:
+  - Down syndrome
+  - trisomy 21
+  - preclinical
+  - therapeutics
+  - animal models
+  - data resource
+license:
+  - MIT
+  - CC-BY-4.0
+version: 1.0.0
+date-released: '2026-06-25'
+doi: '10.5281/zenodo.20848332'
